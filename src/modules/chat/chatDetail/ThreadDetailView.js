@@ -15,7 +15,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { PostRatingBox, PostAddButton, ReplyTextBox, PostTextBox } from '../chatMain/components'
 
 import posts from '../../../mock/posts'
-console.log(posts)
 
 const _getPost = (postId) => {
   const post = posts.find(function(obj){return obj.get('id') === postId})

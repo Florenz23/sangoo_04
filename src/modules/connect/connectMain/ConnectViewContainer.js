@@ -7,7 +7,6 @@ import * as ConnectStateActions from './ConnectState'
 
 export default connect(
   (state) => ({
-    posts: state.getIn(['threads', 'posts']),
   }),
   (dispatch) => ({
        navigate: bindActionCreators(NavigationActions.navigate, dispatch),

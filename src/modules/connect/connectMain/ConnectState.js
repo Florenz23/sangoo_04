@@ -1,6 +1,7 @@
 import {Map} from 'immutable';
 import {loop, Effects} from 'redux-loop-symbol-ponyfill';
 
+
 // Initial state
 const initialState = Map({
   recentContactId : 1,
