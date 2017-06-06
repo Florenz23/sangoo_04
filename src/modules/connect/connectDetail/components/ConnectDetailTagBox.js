@@ -7,23 +7,15 @@ import styles from '../../styles/socialBox';
 
 import contacts from '../../../../mock/contacts'
 
-const datas_list = ['Simon Mignolet', 'Nathaniel Clyne', 'Dejan Lovren', 'Mama Sakho', 'Alberto Moreno', 'Emre Can', 'Joe Allen', 'Phil Coutinho'];
-const data_obj = [
-  {
-  tagDescription : 'Studiengang',
-  tagText : 'Chemie'
-  },{
-  tagDescription : 'Lieblingsfarbe',
-  tagText : 'Chemie'
-  },{
-  tagDescription : 'Interessen',
-  tagText : 'Reisen'
-}
-]
+import realm from '../../db_ini'
 
 const _getContact = (contactId) => {
-  const contact = contacts.find(function(obj){return obj.get('id') === contactId})
-  return contact
+
+  const contacts = realm.objects('User')
+  const searchResult = contacts.filtered(`userId = "${contactId}"`)
+  const recent_contact = searchResult[0]
+  return recent_contact
+
 }
 
 const renderData = (contactId) => {
@@ -32,7 +24,7 @@ const renderData = (contactId) => {
   return (
       <View>
       <List
-          dataArray={data_obj} renderRow={data =>
+          dataArray={contact.userData} renderRow={data =>
             <ListItem style={{backgroundColor:'white'}}>
               <Text>{data.tagDescription}</Text>
               <Right>

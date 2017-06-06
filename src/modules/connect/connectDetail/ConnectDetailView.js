@@ -35,15 +35,13 @@ const renderShareBox = (recentContactId) => {
 
 const ConnectDetailView = (props) => {
   let { recentContactId } = props
-  console.log(recentContactId)
-  recentContactId = 1
   return (
     <ScrollView style={{backgroundColor:'white'}}>
-      {renderImageBox(recentContactId)}
+      {renderImageBox(1)}
       <List style={{backgroundColor:'white'}}>
-      {renderSocialBox(recentContactId)}
+      {renderSocialBox(1)}
       {renderTagBox(recentContactId)}
-      {renderShareBox(recentContactId)}
+      {renderShareBox(1)}
       </List>
     </ScrollView>
   )

@@ -23,6 +23,10 @@ const createDummyUser = () => {
       tagDescription:'Name',
       tagText:'Donald'
     })
+    donny.userData.push({
+      tagDescription:'Interessen',
+      tagText:'Geld, Immobilien'
+    })
     let peter = realm.create('User', {
       userId : 'a2',
     });
@@ -47,7 +51,7 @@ const deleteUsers = () => {
 
 const iniRealm = () => {
   let contactsRealm = realm.objects('User')
-//  deleteUsers()
+  deleteUsers()
   if (contactsRealm.length == 0 ){
     createDummyUser()
   }

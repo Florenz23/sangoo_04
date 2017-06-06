@@ -5,7 +5,7 @@ import { LiestView } from 'realm/react-native'
 
 import styles from '../styles/styles';
 
-import realm from "../../../db/dbConnector"
+import realm from "../db_ini"
 
 const showContactDetail = (navigate,setRecentContactId,contactId) => {
   navigate({routeName: 'ConnectDetail'})
