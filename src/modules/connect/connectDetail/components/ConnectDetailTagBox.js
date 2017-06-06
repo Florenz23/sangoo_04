@@ -18,13 +18,25 @@ const _getContact = (contactId) => {
 
 }
 
+const _getMatchingData = (arr1,arr2) => {
+  arr1.prototype.diff = function(arr2) {
+      var ret = [];
+      for(var i in this) {
+          if(arr2.indexOf( this[i] ) > -1){
+              ret.push( this[i] );
+          }
+      }
+      return ret;
+  };
+}
+
 const renderData = (contactId) => {
   const datas = contacts
   const contact = _getContact(contactId)
   return (
       <View>
       <List
-          dataArray={contact.userData} renderRow={data =>
+          dataArray={contact.publicShardData} renderRow={data =>
             <ListItem style={{backgroundColor:'white'}}>
               <Text>{data.tagDescription}</Text>
               <Right>

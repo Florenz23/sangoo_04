@@ -14,6 +14,7 @@ User.schema = {
   properties: {
     userId:    {type: 'string'},
     userData:    {type: 'list', objectType: 'ConnectData'},
+    publicShardData:    {type: 'list', objectType: 'ConnectData'},
     contacts:    {type: 'list', objectType: 'ConnectUserList'},
   }
 };

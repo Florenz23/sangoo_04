@@ -15,29 +15,42 @@ const createDummyUser = () => {
     let donny = realm.create('User', {
       userId : 'a1'
     });
-    donny.userData.push({
-      tagDescription:'Lieblingsfarbe',
-      tagText:'blau'
-    })
-    donny.userData.push({
+    let donny_name = realm.create('ConnectData', {
       tagDescription:'Name',
       tagText:'Donald'
     })
-    donny.userData.push({
+    let donny_lf = realm.create('ConnectData', {
+      tagDescription:'Lieblingsfarbe',
+      tagText:'blau'
+    })
+    let donny_interessen = realm.create('ConnectData', {
       tagDescription:'Interessen',
       tagText:'Geld, Immobilien'
     })
+    donny.userData.push(donny_name)
+    donny.userData.push(donny_lf)
+    donny.userData.push(donny_interessen)
+    donny.publicShardData.push(donny_name)
+    donny.publicShardData.push(donny_interessen)
     let peter = realm.create('User', {
-      userId : 'a2',
+      userId : 'a2'
     });
-    peter.userData.push({
+    let peter_name = realm.create('ConnectData', {
+      tagDescription:'Name',
+      tagText:'Peter'
+    })
+    let peter_lf = realm.create('ConnectData', {
       tagDescription:'Lieblingsfarbe',
       tagText:'grün'
     })
-    peter.userData.push({
-      tagDescription:'Name',
-      tagText:'Hans'
+    let peter_interessen = realm.create('ConnectData', {
+      tagDescription:'Interessen',
+      tagText:'Malen, Spielen'
     })
+    peter.userData.push(peter_name)
+    peter.userData.push(peter_lf)
+    peter.userData.push(peter_interessen)
+    peter.publicShardData.push(peter_name)
   });
 }
 
