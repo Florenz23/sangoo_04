@@ -17,6 +17,7 @@ const ConnectView = (props) => {
   const { navigate, setRecentContactId, contactId } = props
 
   let datas = realm.objects('User')
+  console.log(datas[0].userData[0])
 
     return (
       <Container style={styles.container}>
@@ -25,11 +26,11 @@ const ConnectView = (props) => {
             dataArray={datas} renderRow={data =>
               <ListItem avatar onPress={() => showContactDetail(navigate,setRecentContactId,data.userId)}>
                 <Left>
-                  <Thumbnail source={require('../../../../img/contacts/pratik.png')} />
+                  <Thumbnail source={require('../../../../img/contacts/donny.png')} />
                 </Left>
                 <Body>
-                  <Text>{data.userData[1].tagText}</Text>
-                  <Text numberOfLines={1} note>{data.userData[0].tagText}</Text>
+                  <Text>{data.publicShardData[0].hashTagData[1].tagText}</Text>
+                  <Text numberOfLines={1} note>{data.publicShardData[0].hashTagData[0].tagText}</Text>
                 </Body>
                 <Right>
                 <Icon ios='md-add' android="md-add" style={{fontSize: 25, color: 'black'}}/>

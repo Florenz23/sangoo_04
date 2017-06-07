@@ -18,7 +18,7 @@ const renderData = (contactId) => {
   return (
               <ListItem avatar style={{backgroundColor:'white'}}>
                 <Left>
-                  <Thumbnail source={contact.get('img')} />
+                  <Thumbnail source={require('../../../../../img/contacts/donny.png')} />
                 </Left>
                 <Body>
                   <Text>{contact.get('name')} {contact.get('surname')}</Text>

@@ -13,8 +13,8 @@ User.schema = {
   primaryKey : 'userId',
   properties: {
     userId:    {type: 'string'},
-    userData:    {type: 'list', objectType: 'ConnectData'},
-    publicShardData:    {type: 'list', objectType: 'ConnectData'},
+    userData:    {type: 'list', objectType: 'UserData'},
+    publicShardData:    {type: 'list', objectType: 'UserData'},
     contacts:    {type: 'list', objectType: 'ConnectUserList'},
   }
 };
@@ -33,5 +33,15 @@ ConnectData.schema = {
   properties: {
     tagDescription:    {type: 'string'},
     tagText:    {type: 'string'},
+  }
+};
+
+export class UserData {}
+UserData.schema = {
+  name: 'UserData',
+  properties: {
+    personalData:    {type: 'list', objectType: 'ConnectData'},
+    socialData:    {type: 'list', objectType: 'ConnectData'},
+    hashTagData:    {type: 'list', objectType: 'ConnectData'},
   }
 };

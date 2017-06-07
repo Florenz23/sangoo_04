@@ -39,7 +39,7 @@ const ConnectDetailView = (props) => {
     <ScrollView style={{backgroundColor:'white'}}>
       {renderImageBox(1)}
       <List style={{backgroundColor:'white'}}>
-      {renderSocialBox(1)}
+      {renderSocialBox(recentContactId)}
       {renderTagBox(recentContactId)}
       {renderShareBox(1)}
       </List>

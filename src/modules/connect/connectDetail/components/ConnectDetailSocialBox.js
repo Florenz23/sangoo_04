@@ -5,59 +5,69 @@ import { View } from 'react-native'
 
 import styles from '../../styles/socialBox';
 
-import contacts from '../../../../mock/contacts'
+import realm from '../../db_ini'
 
 const _getContact = (contactId) => {
-  const contact = contacts.find(function(obj){return obj.get('id') === contactId})
-  return contact
+
+  const contacts = realm.objects('User')
+  const searchResult = contacts.filtered(`userId = "${contactId}"`)
+  const recent_contact = searchResult[0]
+  return recent_contact
+
+}
+
+const _renderSearch = () => {
+  return (
+              <Right>
+                <Icon name="search" />
+              </Right>
+  )
+}
+
+const _renderFacebook = (contact) => {
+  return _renderSocialMedia(contact, "Facebook","logo-facebook", "#3B579D")
+}
+const _renderGooglePlus = (contact) => {
+  return _renderSocialMedia(contact, "GooglePlus","logo-googleplus", "#DD5044")
+}
+const _renderTwitter = (contact) => {
+  return _renderSocialMedia(contact, "Twitter","logo-twitter", "#55ACEE")
+}
+const _renderLinkedIn = (contact) => {
+  return _renderSocialMedia(contact, "LinkedIn","logo-linkedin", "#007BB6")
+}
+const _renderYouTube = (contact) => {
+  return _renderSocialMedia(contact, "YouTube","logo-youtube", "#D62727")
+}
+
+const _renderSocialMedia = (contact,tag,logo,color) => {
+  const searchResult = contact.publicShardData[0].socialData.filtered(`tagDescription = "${tag}"`)
+  if (searchResult.length == 0 ){
+    return
+  }
+  return (
+         <CardItem>
+              <Icon active name={logo} style={{ color: `${color}` }} />
+              <Text>{tag}</Text>
+              {_renderSearch()}
+         </CardItem>
+  )
 }
 
 const renderData = (contactId) => {
-  const datas = contacts
   const contact = _getContact(contactId)
   return (
     <List>
-         <CardItem>
-              <Icon active name="logo-facebook" style={{ color: '#3B579D' }} />
-              <Text>facebook</Text>
-              <Right>
-                <Icon name="search" />
-              </Right>
-            </CardItem>
-          <CardItem>
-              <Icon active name="logo-googleplus" style={{ color: '#DD5044' }} />
-              <Text>Google Plus</Text>
-              <Right>
-                <Icon name="search" />
-              </Right>
-            </CardItem>
-            <CardItem>
-              <Icon active name="logo-twitter" style={{ color: '#55ACEE' }} />
-              <Text>Twitter</Text>
-              <Right>
-                <Icon name="search" />
-              </Right>
-            </CardItem>
-            <CardItem>
-              <Icon active name="logo-linkedin" style={{ color: '#007BB6' }} />
-              <Text>LinkedIn</Text>
-              <Right>
-                <Icon name="search" />
-              </Right>
-            </CardItem>
-            <CardItem>
-              <Icon active name="logo-youtube" style={{ color: '#D62727' }} />
-              <Text>YouTube</Text>
-              <Right>
-                <Icon name="search" />
-              </Right>
-            </CardItem>
-            </List>
+          {_renderFacebook(contact)}
+          {_renderGooglePlus(contact)}
+          {_renderTwitter(contact)}
+          {_renderLinkedIn(contact)}
+          {_renderYouTube(contact)}
+    </List>
       )
 }
 
 const ConnectDetailSocialBox = (props) => {
-  const datas = contacts
   const {children} = props
     return (
       <View>
