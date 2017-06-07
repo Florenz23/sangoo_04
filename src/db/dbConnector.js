@@ -17,6 +17,10 @@ const createDummyUser = () => {
     });
     let donny_userData_personalData_name = realm.create('ConnectData', {
       tagDescription:'Name',
+      tagText:'Trump'
+    })
+    let donny_userData_personalData_surname = realm.create('ConnectData', {
+      tagDescription:'Vorname',
       tagText:'Donald'
     })
     let donny_userData_personalData_phone = realm.create('ConnectData', {
@@ -47,6 +51,9 @@ const createDummyUser = () => {
     });
     let donny_publicShardData = realm.create('UserData', {
     });
+    donny_userData.personalData.push(donny_userData_personalData_surname)
+    donny_userData.personalData.push(donny_userData_personalData_name)
+    donny_userData.personalData.push(donny_userData_personalData_phone)
     donny_publicShardData.personalData.push(donny_userData_personalData_name)
     donny_publicShardData.personalData.push(donny_userData_personalData_phone)
     donny_publicShardData.socialData.push(donny_userData_socialData_facebook)

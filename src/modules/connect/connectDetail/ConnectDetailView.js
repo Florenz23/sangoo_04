@@ -37,7 +37,7 @@ const ConnectDetailView = (props) => {
   let { recentContactId } = props
   return (
     <ScrollView style={{backgroundColor:'white'}}>
-      {renderImageBox(1)}
+      {renderImageBox(recentContactId)}
       <List style={{backgroundColor:'white'}}>
       {renderSocialBox(recentContactId)}
       {renderTagBox(recentContactId)}

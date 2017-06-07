@@ -17,7 +17,7 @@ import { PostRatingBox, PostAddButton, PostTextBox } from './components'
 
 
 const showDetail = (navigate,showPostDetail,postId) => {
-  //navigate({routeName: 'ThreadDetailViewContainer'})
+  navigate({routeName: 'ThreadDetailViewContainer'})
   showPostDetail(postId)
 }
 const colors = ['#7cdbd5','#f53240','#f9be02']

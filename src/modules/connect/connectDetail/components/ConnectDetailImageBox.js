@@ -5,34 +5,46 @@ import { View } from 'react-native'
 
 import styles from '../../styles/imageBox';
 
-import contacts from '../../../../mock/contacts'
+import realm from '../../db_ini'
 
 const _getContact = (contactId) => {
-  const contact = contacts.find(function(obj){return obj.get('id') === contactId})
-  return contact
+
+  const contacts = realm.objects('User')
+  const searchResult = contacts.filtered(`userId = "${contactId}"`)
+  const recent_contact = searchResult[0]
+  return recent_contact
+
 }
 
+const renderSurename = (contact) => {
+  const searchResult = contact.userData[0].personalData.filtered(`tagDescription = "Vorname"`)[0]
+    if (searchResult) {
+      return searchResult.tagText
+    }
+}
+const renderName = (contact) => {
+  const searchResult = contact.publicShardData[0].personalData.filtered(`tagDescription = "Name"`)[0]
+    if (searchResult) {
+      return searchResult.tagText
+    }
+}
+//TODO hier das ...64 Bild aus der Datenbank auslesen, also kein require mehr
 const renderData = (contactId) => {
-  const datas = contacts
   const contact = _getContact(contactId)
+  console.log(contact.userData[0].personalData)
   return (
               <ListItem avatar style={{backgroundColor:'white'}}>
                 <Left>
                   <Thumbnail source={require('../../../../../img/contacts/donny.png')} />
                 </Left>
                 <Body>
-                  <Text>{contact.get('name')} {contact.get('surname')}</Text>
-                  <Text numberOfLines={1} note>{contact.get('note')}</Text>
+                  <Text>{renderSurename(contact)} {renderName(contact)}</Text>
                 </Body>
-                <Right>
-                  <Text note>{contact.get('time')}</Text>
-                </Right>
               </ListItem>
   )
 }
 
 const ConnectDetailImageBox = (props) => {
-  const datas = contacts
   const {children} = props
     return (
       <View>
