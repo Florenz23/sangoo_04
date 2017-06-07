@@ -1,77 +1,81 @@
 import React, { Component } from 'react';
-import { Container, Header, Title, Content, Button, Icon, List, ListItem, CheckBox, Text, Left, Right, Body } from 'native-base';
-
-import styles from '../../styles/styles';
-
+import { CheckBox, List, Header, Title, Content, Button, Icon, IconNB, Card, CardItem, Text, Left, Right, Body, ListItem } from 'native-base';
 import { View } from 'react-native'
 
-class ConnectDetailShareBox extends Component {
+import styles from '../../styles/socialBox';
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      checkbox1: true,
-      checkbox2: true,
-      checkbox3: true,
-      checkbox4: false,
-    };
-  }
+import contacts from '../../../../mock/contacts'
 
-  toggleSwitch1() {
-    this.setState({
-      checkbox1: !this.state.checkbox1,
-    });
-  }
+import realm from '../../db_ini'
 
-  toggleSwitch2() {
-    this.setState({
-      checkbox2: !this.state.checkbox2,
-    });
-  }
+const _getContact = (contactId) => {
 
-  toggleSwitch3() {
-    this.setState({
-      checkbox3: !this.state.checkbox3,
-    });
-  }
+  const contacts = realm.objects('User')
+  const searchResult = contacts.filtered(`userId = "${contactId}"`)
+  const recent_contact = searchResult[0]
+  return recent_contact
 
-  toggleSwitch4() {
-    this.setState({
-      checkbox4: !this.state.checkbox4,
-    });
-  }
-
-  render() {
-    return (
-      <View>
-          <ListItem button onPress={() => this.toggleSwitch1()}>
-            <CheckBox checked={this.state.checkbox1} onPress={() => this.toggleSwitch1()} />
-            <Body>
-              <Text>Lunch Break</Text>
-            </Body>
-          </ListItem>
-          <ListItem button onPress={() => this.toggleSwitch2()}>
-            <CheckBox color="red" checked={this.state.checkbox2} onPress={() => this.toggleSwitch2()} />
-            <Body>
-              <Text>Daily Stand Up</Text>
-            </Body>
-          </ListItem>
-          <ListItem button onPress={() => this.toggleSwitch3()}>
-            <CheckBox color="green" checked={this.state.checkbox3} onPress={() => this.toggleSwitch3()} />
-            <Body>
-              <Text>Finish list Screen</Text>
-            </Body>
-          </ListItem>
-          <ListItem button onPress={() => this.toggleSwitch4()}>
-            <CheckBox color="#000" checked={this.state.checkbox4} onPress={() => this.toggleSwitch4()} />
-            <Body>
-              <Text>Discussion with Client</Text>
-            </Body>
-          </ListItem>
-          </View>
-    );
-  }
 }
 
+const _getMatchingData = (arr1,arr2) => {
+  arr1.prototype.diff = function(arr2) {
+      var ret = [];
+      for(var i in this) {
+          if(arr2.indexOf( this[i] ) > -1){
+              ret.push( this[i] );
+          }
+      }
+      return ret;
+  };
+}
+
+const renderData = (contactId) => {
+  const datas = contacts
+  const contact = _getContact(contactId)
+  return (
+      <View>
+      <List
+          dataArray={contact.userData[0].socialData} renderRow={data =>
+          <ListItem button onPress={() => changeShareStatus()}>
+            <CheckBox color="green" checked={true} onPress={() => changeShareStatus()} />
+            <Body>
+              <Text>{data.tagDescription}</Text>
+            </Body>
+          </ListItem>
+        }
+        />
+      <List
+          dataArray={contact.userData[0].personalData} renderRow={data =>
+          <ListItem button onPress={() => changeShareStatus()}>
+            <CheckBox color="green" checked={true} onPress={() => changeShareStatus()} />
+            <Body>
+              <Text>{data.tagDescription}</Text>
+            </Body>
+          </ListItem>
+        }
+        />
+      <List
+          dataArray={contact.userData[0].hashTagData} renderRow={data =>
+          <ListItem button onPress={() => changeShareStatus()}>
+            <CheckBox color="green" checked={true} onPress={() => changeShareStatus()} />
+            <Body>
+              <Text>{data.tagDescription}</Text>
+            </Body>
+          </ListItem>
+        }
+        />
+      </View>
+      )
+}
+
+const ConnectDetailShareBox = (props) => {
+  const datas = contacts
+  const {children} = props
+    return (
+      <View>
+        {renderData(children)}
+      </View>
+    )
+}
 
 export default ConnectDetailShareBox

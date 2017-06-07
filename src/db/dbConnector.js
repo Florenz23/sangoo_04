@@ -25,7 +25,7 @@ const createDummyUser = () => {
     })
     let donny_userData_personalData_phone = realm.create('ConnectData', {
       tagDescription:'Phone',
-      tagText:'Donald'
+      tagText:'1111 111 111'
     })
     let donny_userData_hashTagData_color = realm.create('ConnectData', {
       tagDescription:'Lieblingsfarbe',
@@ -61,6 +61,12 @@ const createDummyUser = () => {
     donny_publicShardData.socialData.push(donny_userData_socialData_twitter)
     donny_publicShardData.hashTagData.push(donny_userData_hashTagData_hobby)
     donny_publicShardData.hashTagData.push(donny_userData_hashTagData_color)
+
+    donny_userData.socialData.push(donny_userData_socialData_facebook)
+    donny_userData.socialData.push(donny_userData_socialData_linkedIn)
+    donny_userData.socialData.push(donny_userData_socialData_twitter)
+    donny_userData.hashTagData.push(donny_userData_hashTagData_hobby)
+    donny_userData.hashTagData.push(donny_userData_hashTagData_color)
     donny.userData.push(donny_userData)
     donny.publicShardData.push(donny_publicShardData)
   });

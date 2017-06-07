@@ -2,7 +2,7 @@ import React from "react"
 import { List } from "native-base"
 import { ScrollView, Text } from "react-native"
 
-import { ConnectDetailImageBox, ConnectDetailShareBox, ConnectDetailSocialBox, ConnectDetailTagBox } from './components'
+import { ConnectDetailImageBox, ConnectDetailShareBox, ConnectDetailSocialBox, ConnectDetailTagBox, ConnectDetailPersonalDataBox } from './components'
 
 const renderImageBox = (recentContactId) => {
   return (
@@ -25,6 +25,13 @@ const renderTagBox = (recentContactId) => {
       </ConnectDetailTagBox>
   )
 }
+const renderPersonalDataBox = (recentContactId) => {
+  return (
+      <ConnectDetailPersonalDataBox>
+        {recentContactId}
+      </ConnectDetailPersonalDataBox>
+  )
+}
 const renderShareBox = (recentContactId) => {
   return (
       <ConnectDetailShareBox>
@@ -40,8 +47,9 @@ const ConnectDetailView = (props) => {
       {renderImageBox(recentContactId)}
       <List style={{backgroundColor:'white'}}>
       {renderSocialBox(recentContactId)}
+      {renderPersonalDataBox(recentContactId)}
       {renderTagBox(recentContactId)}
-      {renderShareBox(1)}
+      {renderShareBox(recentContactId)}
       </List>
     </ScrollView>
   )
