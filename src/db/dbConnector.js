@@ -57,7 +57,6 @@ const createDummyUser = () => {
     donny_publicShardData.personalData.push(donny_userData_personalData_name)
     donny_publicShardData.personalData.push(donny_userData_personalData_phone)
     donny_publicShardData.socialData.push(donny_userData_socialData_facebook)
-    donny_publicShardData.socialData.push(donny_userData_socialData_linkedIn)
     donny_publicShardData.socialData.push(donny_userData_socialData_twitter)
     donny_publicShardData.hashTagData.push(donny_userData_hashTagData_hobby)
     donny_publicShardData.hashTagData.push(donny_userData_hashTagData_color)

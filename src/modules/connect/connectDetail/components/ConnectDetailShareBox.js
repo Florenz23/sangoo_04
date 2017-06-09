@@ -29,41 +29,76 @@ const _getMatchingData = (arr1,arr2) => {
   };
 }
 
+const renderCheckBox = (tagDescription,i,checked) => {
+  console.log(tagDescription)
+    return (
+            <ListItem key={i} button onPress={() => changeShareStatus()}>
+              <CheckBox color="green" checked={checked} onPress={() => changeShareStatus()} />
+              <Body>
+                <Text>{tagDescription}</Text>
+              </Body>
+            </ListItem>
+    )
+}
+
+const findValue = (dbDataArray,tagDescription) => {
+  const findResult = dbDataArray.filtered(`tagDescription = "${tagDescription}"`)[0]
+  if (findResult) {
+    return true
+  }
+  return false
+}
+
+
+const prepareData = (userData, sharedData ) => {
+  const socialData = userData
+  var data = []
+  for (var i in socialData) {
+    var checked = false
+    if (findValue(sharedData, userData[i].tagDescription)){
+      checked = true
+    }
+    data.push(renderCheckBox(userData[i].tagDescription,i,checked))
+  }
+  return data
+}
+const renderPersonalData = (contact) => {
+
+  const userData = contact.userData[0].personalData
+  const sharedData = contact.publicShardData[0].personalData
+  return (prepareData(userData,sharedData))
+
+}
+
+const renderSocialData = (contact) => {
+
+  const userData = contact.userData[0].socialData
+  const sharedData = contact.publicShardData[0].socialData
+  return (prepareData(userData,sharedData))
+
+}
+
+const renderHashTagData = (contact) => {
+
+  const userData = contact.userData[0].hashTagData
+  const sharedData = contact.publicShardData[0].hashTagData
+  return (prepareData(userData,sharedData))
+
+}
+
 const renderData = (contactId) => {
-  const datas = contacts
   const contact = _getContact(contactId)
   return (
       <View>
-      <List
-          dataArray={contact.userData[0].socialData} renderRow={data =>
-          <ListItem button onPress={() => changeShareStatus()}>
-            <CheckBox color="green" checked={true} onPress={() => changeShareStatus()} />
-            <Body>
-              <Text>{data.tagDescription}</Text>
-            </Body>
-          </ListItem>
-        }
-        />
-      <List
-          dataArray={contact.userData[0].personalData} renderRow={data =>
-          <ListItem button onPress={() => changeShareStatus()}>
-            <CheckBox color="green" checked={true} onPress={() => changeShareStatus()} />
-            <Body>
-              <Text>{data.tagDescription}</Text>
-            </Body>
-          </ListItem>
-        }
-        />
-      <List
-          dataArray={contact.userData[0].hashTagData} renderRow={data =>
-          <ListItem button onPress={() => changeShareStatus()}>
-            <CheckBox color="green" checked={true} onPress={() => changeShareStatus()} />
-            <Body>
-              <Text>{data.tagDescription}</Text>
-            </Body>
-          </ListItem>
-        }
-        />
+        <List>
+          {renderPersonalData(contact)}
+        </List>
+        <List>
+          {renderSocialData(contact)}
+        </List>
+        <List>
+          {renderHashTagData(contact)}
+        </List>
       </View>
       )
 }
