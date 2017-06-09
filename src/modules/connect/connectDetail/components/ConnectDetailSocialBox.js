@@ -41,7 +41,7 @@ const _renderYouTube = (contact) => {
 }
 
 const _renderSocialMedia = (contact,tag,logo,color) => {
-  const searchResult = contact.publicShardData[0].socialData.filtered(`tagDescription = "${tag}"`)
+  const searchResult = contact.publicSharedData[0].socialData.filtered(`tagDescription = "${tag}"`)
   if (searchResult.length == 0 ){
     return
   }

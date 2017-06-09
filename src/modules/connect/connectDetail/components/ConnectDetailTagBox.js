@@ -36,7 +36,7 @@ const renderData = (contactId) => {
   return (
       <View>
       <List
-          dataArray={contact.publicShardData[0].hashTagData} renderRow={data =>
+          dataArray={contact.publicSharedData[0].hashTagData} renderRow={data =>
             <ListItem style={{backgroundColor:'white'}}>
               <Text>{data.tagDescription}</Text>
               <Right>

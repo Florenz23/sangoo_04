@@ -37,17 +37,17 @@ import realm from "./db_ini"
     })
     let donny_userData = realm.create('UserData', {
     });
-    let donny_publicShardData = realm.create('UserData', {
+    let donny_publicSharedData = realm.create('UserData', {
     });
     donny_userData.personalData.push(donny_userData_personalData_surname)
     donny_userData.personalData.push(donny_userData_personalData_name)
     donny_userData.personalData.push(donny_userData_personalData_phone)
-    donny_publicShardData.personalData.push(donny_userData_personalData_name)
-    donny_publicShardData.personalData.push(donny_userData_personalData_phone)
-    donny_publicShardData.socialData.push(donny_userData_socialData_facebook)
-    donny_publicShardData.socialData.push(donny_userData_socialData_twitter)
-    donny_publicShardData.hashTagData.push(donny_userData_hashTagData_hobby)
-    donny_publicShardData.hashTagData.push(donny_userData_hashTagData_color)
+    donny_publicSharedData.personalData.push(donny_userData_personalData_name)
+    donny_publicSharedData.personalData.push(donny_userData_personalData_phone)
+    donny_publicSharedData.socialData.push(donny_userData_socialData_facebook)
+    donny_publicSharedData.socialData.push(donny_userData_socialData_twitter)
+    donny_publicSharedData.hashTagData.push(donny_userData_hashTagData_hobby)
+    donny_publicSharedData.hashTagData.push(donny_userData_hashTagData_color)
 
     donny_userData.socialData.push(donny_userData_socialData_facebook)
     donny_userData.socialData.push(donny_userData_socialData_linkedIn)
@@ -55,7 +55,7 @@ import realm from "./db_ini"
     donny_userData.hashTagData.push(donny_userData_hashTagData_hobby)
     donny_userData.hashTagData.push(donny_userData_hashTagData_color)
     donny.userData.push(donny_userData)
-    donny.publicShardData.push(donny_publicShardData)
+    donny.publicSharedData.push(donny_publicSharedData)
 
   });
 export default realm

@@ -52,19 +52,19 @@ donny_userData_hashTagData.push(donny_userData_hashTagData_color)
 let donny_userDataClass = new UserDataClass(donny_userData_personalData, donny_userData_socialData, donny_userData_hashTagData)
 let donny_publicSharedDataClass = new UserDataClass(donny_publicSharedData_socialData, donny_publicSharedData_socialData, donny_publicSharedData_hashTagData)
 
-let donny = new UserClass('a1',donny_userDataClass,donny_publicSharedDataClass,[])
-console.log(donny )
-const createDummyUser = () => {
+let donny12 = new UserClass('a1',donny_userDataClass,donny_publicSharedDataClass,[])
+
+const insertUserInDb = (user) => {
   realm.write(() => {
     let userData = realm.create('UserData' , {
-      personalData : donny_userData_personalData,
-      socialData : donny_userData_socialData,
-      hashTagData : donny_userData_hashTagData
+      personalData : user.userData.personalData,
+      socialData : user.userData.socialData,
+      hashTagData : user.userData.hashTagData
     })
     let sharedData = realm.create('UserData' , {
-      personalData : donny_publicSharedData_personalData,
-      socialData : donny_publicSharedData_socialData,
-      hashTagData : donny_publicSharedData_hashTagData
+      personalData : user.publicSharedData.personalData,
+      socialData : user.publicSharedData.socialData,
+      hashTagData : user.publicSharedData.hashTagData
     })
     let donny = realm.create('User', {
         userId: 'a1',
@@ -72,6 +72,10 @@ const createDummyUser = () => {
     donny.userData.push(userData)
     donny.publicSharedData.push(sharedData)
   })
+
+}
+const createDummyUser = () => {
+  insertUserInDb(donny12)
 }
 
 const deleteUsers = () => {

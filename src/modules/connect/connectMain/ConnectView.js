@@ -30,8 +30,8 @@ const ConnectView = (props) => {
                   <Thumbnail source={require('../../../../img/contacts/donny.png')} />
                 </Left>
                 <Body>
-                  <Text>{data.publicShardData[0].hashTagData[1].tagText}</Text>
-                  <Text numberOfLines={1} note>{data.publicShardData[0].hashTagData[0].tagText}</Text>
+                  <Text>{data.publicSharedData[0].hashTagData[1].tagText}</Text>
+                  <Text numberOfLines={1} note>{data.publicSharedData[0].hashTagData[0].tagText}</Text>
                 </Body>
                 <Right>
                 <Icon ios='md-add' android="md-add" style={{fontSize: 25, color: 'black'}}/>

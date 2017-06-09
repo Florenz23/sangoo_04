@@ -23,7 +23,7 @@ const renderSurename = (contact) => {
     }
 }
 const renderName = (contact) => {
-  const searchResult = contact.publicShardData[0].personalData.filtered(`tagDescription = "Name"`)[0]
+  const searchResult = contact.publicSharedData[0].personalData.filtered(`tagDescription = "Name"`)[0]
     if (searchResult) {
       return searchResult.tagText
     }

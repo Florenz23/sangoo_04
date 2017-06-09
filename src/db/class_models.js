@@ -1,8 +1,8 @@
 export class UserClass {
-  constructor(userId, userData, publicShardData, contacts){
+  constructor(userId, userData, publicSharedData, contacts){
     this.userId = userId,
     this.userData = userData,
-    this.publicSharedData = publicShardData,
+    this.publicSharedData = publicSharedData,
     this.contacts = contacts
   }
 }

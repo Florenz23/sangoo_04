@@ -69,7 +69,7 @@ const prepareData = (userData, sharedData ) => {
 const renderPersonalData = (contact) => {
 
   const userData = contact.userData[0].personalData
-  const sharedData = contact.publicShardData[0].personalData
+  const sharedData = contact.publicSharedData[0].personalData
   return (prepareData(userData,sharedData))
 
 }
@@ -77,7 +77,7 @@ const renderPersonalData = (contact) => {
 const renderSocialData = (contact) => {
 
   const userData = contact.userData[0].socialData
-  const sharedData = contact.publicShardData[0].socialData
+  const sharedData = contact.publicSharedData[0].socialData
   return (prepareData(userData,sharedData))
 
 }
@@ -85,7 +85,7 @@ const renderSocialData = (contact) => {
 const renderHashTagData = (contact) => {
 
   const userData = contact.userData[0].hashTagData
-  const sharedData = contact.publicShardData[0].hashTagData
+  const sharedData = contact.publicSharedData[0].hashTagData
   return (prepareData(userData,sharedData))
 
 }
