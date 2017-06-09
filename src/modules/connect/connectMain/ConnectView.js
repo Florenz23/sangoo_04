@@ -18,7 +18,7 @@ const ConnectView = (props) => {
 
   let datas = realm.objects('User')
   console.log(datas.length)
-  console.log(datas[0].userData[0])
+  console.log(datas[0].userData[0].personalData[0].tagDescription)
 
     return (
       <Container style={styles.container}>

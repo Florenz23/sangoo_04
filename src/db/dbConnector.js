@@ -53,11 +53,25 @@ let donny_userDataClass = new UserDataClass(donny_userData_personalData, donny_u
 let donny_publicSharedDataClass = new UserDataClass(donny_publicSharedData_socialData, donny_publicSharedData_socialData, donny_publicSharedData_hashTagData)
 
 let donny = new UserClass('a1',donny_userDataClass,donny_publicSharedDataClass,[])
-
+console.log(donny )
 const createDummyUser = () => {
   realm.write(() => {
-    donny
-  });
+    let userData = realm.create('UserData' , {
+      personalData : donny_userData_personalData,
+      socialData : donny_userData_socialData,
+      hashTagData : donny_userData_hashTagData
+    })
+    let sharedData = realm.create('UserData' , {
+      personalData : donny_publicSharedData_personalData,
+      socialData : donny_publicSharedData_socialData,
+      hashTagData : donny_publicSharedData_hashTagData
+    })
+    let donny = realm.create('User', {
+        userId: 'a1',
+    })
+    donny.userData.push(userData)
+    donny.publicSharedData.push(sharedData)
+  })
 }
 
 const deleteUsers = () => {
