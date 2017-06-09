@@ -29,6 +29,10 @@ const _getMatchingData = (arr1,arr2) => {
   };
 }
 
+const changeShareStatus = () => {
+  console.log("change")
+}
+
 const renderCheckBox = (tagDescription,i,checked) => {
   console.log(tagDescription)
     return (

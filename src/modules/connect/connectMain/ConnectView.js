@@ -17,6 +17,7 @@ const ConnectView = (props) => {
   const { navigate, setRecentContactId, contactId } = props
 
   let datas = realm.objects('User')
+  console.log(datas.length)
   console.log(datas[0].userData[0])
 
     return (
