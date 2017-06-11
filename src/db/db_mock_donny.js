@@ -41,8 +41,8 @@ donny_userData_hashTagData.push(donny_userData_hashTagData_hobby)
 donny_userData_hashTagData.push(donny_userData_hashTagData_color)
 
 let donny_userDataClass = new UserDataClass(donny_userData_personalData, donny_userData_socialData, donny_userData_hashTagData)
-let donny_publicSharedDataClass = new UserDataClass(donny_publicSharedData_socialData, donny_publicSharedData_socialData, donny_publicSharedData_hashTagData)
+let donny_publicSharedDataClass = new UserDataClass(donny_publicSharedData_personalData, donny_publicSharedData_socialData, donny_publicSharedData_hashTagData)
 
 let donny12 = new UserClass('a1',donny_userDataClass,donny_publicSharedDataClass,[])
-
+console.log(donny12)
 export default donny12

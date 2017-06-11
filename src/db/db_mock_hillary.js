@@ -41,7 +41,7 @@ hillary_userData_hashTagData.push(hillary_userData_hashTagData_hobby)
 hillary_userData_hashTagData.push(hillary_userData_hashTagData_color)
 
 let hillary_userDataClass = new UserDataClass(hillary_userData_personalData, hillary_userData_socialData, hillary_userData_hashTagData)
-let hillary_publicSharedDataClass = new UserDataClass(hillary_publicSharedData_socialData, hillary_publicSharedData_socialData, hillary_publicSharedData_hashTagData)
+let hillary_publicSharedDataClass = new UserDataClass(hillary_publicSharedData_personalData, hillary_publicSharedData_socialData, hillary_publicSharedData_hashTagData)
 
 let hillary12 = new UserClass('a1',hillary_userDataClass,hillary_publicSharedDataClass,[])
 

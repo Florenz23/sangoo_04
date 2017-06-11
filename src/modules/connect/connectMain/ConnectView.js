@@ -7,10 +7,14 @@ import styles from '../styles/styles';
 
 import realm from "../db_ini"
 
+import { findInDb } from '../../../db/db_helper'
+
 const showContactDetail = (navigate,setRecentContactId,contactId) => {
   navigate({routeName: 'ConnectDetail'})
   setRecentContactId(contactId)
 }
+
+
 //TODO user ListView from realm
 
 const ConnectView = (props) => {
@@ -30,7 +34,9 @@ const ConnectView = (props) => {
                   <Thumbnail source={require('../../../../img/contacts/donny.png')} />
                 </Left>
                 <Body>
-                  <Text>{data.publicSharedData[0].hashTagData[1].tagText}</Text>
+                  <Text>
+                    {findInDb(data.userData[0].personalData,"tagDescription","Vorname").tagText}
+                  </Text>
                   <Text numberOfLines={1} note>{data.publicSharedData[0].hashTagData[0].tagText}</Text>
                 </Body>
                 <Right>
