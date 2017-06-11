@@ -1,8 +1,8 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import ConnectView from './ConnectView';
+import ContactView from './ContactView';
 import {NavigationActions} from 'react-navigation';
-import * as ConnectStateActions from './ConnectState'
+import * as ContactStateActions from './ContactState'
 
 
 export default connect(
@@ -10,6 +10,6 @@ export default connect(
   }),
   (dispatch) => ({
        navigate: bindActionCreators(NavigationActions.navigate, dispatch),
-       setRecentContactId : (contactId ) => dispatch(ConnectStateActions.setRecentContactId(contactId))
+       setRecentContactId : (contactId ) => dispatch(ContactStateActions.setRecentContactId(contactId))
     })
-)(ConnectView)
+)(ContactView)

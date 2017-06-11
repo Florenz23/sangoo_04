@@ -67,7 +67,7 @@ const renderData = (contactId) => {
       )
 }
 
-const ConnectDetailSocialBox = (props) => {
+const ContactDetailSocialBox = (props) => {
   const {children} = props
     return (
       <View>
@@ -76,4 +76,4 @@ const ConnectDetailSocialBox = (props) => {
     )
 }
 
-export default ConnectDetailSocialBox
+export default ContactDetailSocialBox

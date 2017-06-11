@@ -49,7 +49,7 @@ const renderData = (contactId) => {
       )
 }
 
-const ConnectDetailPersonalDataBox = (props) => {
+const ContactDetailPersonalDataBox = (props) => {
   const datas = contacts
   const {children} = props
     return (
@@ -59,4 +59,4 @@ const ConnectDetailPersonalDataBox = (props) => {
     )
 }
 
-export default ConnectDetailPersonalDataBox
+export default ContactDetailPersonalDataBox

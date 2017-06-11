@@ -8,7 +8,7 @@ const initialState = Map({
 });
 
 // Actions
-const SETRECENTCONTACTID = 'ConnectState/SETRECENTCONTACTID'
+const SETRECENTCONTACTID = 'ContactState/SETRECENTCONTACTID'
 // Action creators
 export function setRecentContactId(contactId) {
   return {
@@ -20,7 +20,7 @@ export function setRecentContactId(contactId) {
 }
 
 // Reducer
-export default function ConnectStateReducer(state = initialState, action = {}) {
+export default function ContactStateReducer(state = initialState, action = {}) {
   switch (action.type) {
     case SETRECENTCONTACTID:
       return state.update('recentContactId', value => action.payload.contactId);

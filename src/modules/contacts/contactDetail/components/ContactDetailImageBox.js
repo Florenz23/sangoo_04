@@ -44,7 +44,7 @@ const renderData = (contactId) => {
   )
 }
 
-const ConnectDetailImageBox = (props) => {
+const ContactDetailImageBox = (props) => {
   const {children} = props
     return (
       <View>
@@ -53,4 +53,4 @@ const ConnectDetailImageBox = (props) => {
     )
 }
 
-export default ConnectDetailImageBox
+export default ContactDetailImageBox

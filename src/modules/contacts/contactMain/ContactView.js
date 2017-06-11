@@ -8,12 +8,12 @@ import styles from '../styles/styles';
 import realm from "../db_ini"
 
 const showContactDetail = (navigate,setRecentContactId,contactId) => {
-  navigate({routeName: 'ConnectDetail'})
+  navigate({routeName: 'ContactDetail'})
   setRecentContactId(contactId)
 }
 //TODO user ListView from realm
 
-const ConnectView = (props) => {
+const ContactView = (props) => {
   const { navigate, setRecentContactId, contactId } = props
 
   let datas = realm.objects('User')
@@ -44,4 +44,4 @@ const ConnectView = (props) => {
     )
 }
 
-export default ConnectView;
+export default ContactView;

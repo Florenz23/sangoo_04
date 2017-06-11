@@ -5,7 +5,8 @@ import CounterViewContainer from '../counter/CounterViewContainer';
 import ColorViewContainer from '../colors/ColorViewContainer';
 import ThreadNavContainer from '../chat/chatMain/ThreadNavContainer';
 import ThreadDetailViewContainer from '../chat/chatDetail/ThreadDetailViewContainer';
-import ContactsNavContainer from '../contacts/contactsMain/ContactsNavContainer';
+import ContactNavContainer from '../contacts/contactMain/ContactNavContainer';
+import ContactDetailViewContainer from '../contacts/contactDetail/ContactDetailViewContainer';
 import SettingsNavContainer from '../settings/SettingsNavContainer';
 import ConnectNavContainer from '../connect/connectMain/ConnectNavContainer';
 import ConnectDetailViewContainer from '../connect/connectDetail/ConnectDetailViewContainer';
@@ -19,7 +20,7 @@ const activeColor = 'white';
 export const MainScreenNavigator = TabNavigator({
   Chat: {screen: ThreadNavContainer},
   Connect: {screen: ConnectNavContainer},
-  Contacts : {screen: ContactsNavContainer},
+  Contacts : {screen: ContactNavContainer},
   Settings : {screen: SettingsNavContainer}, }, {
   tabBarOptions: {
     ...Platform.select({
@@ -49,6 +50,7 @@ const AppNavigator = StackNavigator({
   InfiniteColorStack: {screen: ConnectNavContainer},
   ThreadDetailViewContainer: {screen: ThreadDetailViewContainer},
   ConnectDetail : {screen: ConnectDetailViewContainer},
+  ContactDetail : {screen: ContactDetailViewContainer},
 });
 
 export default AppNavigator;

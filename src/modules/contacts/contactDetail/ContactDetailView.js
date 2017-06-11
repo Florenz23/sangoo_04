@@ -2,45 +2,45 @@ import React from "react"
 import { List } from "native-base"
 import { ScrollView, Text } from "react-native"
 
-import { ConnectDetailImageBox, ConnectDetailShareBox, ConnectDetailSocialBox, ConnectDetailTagBox, ConnectDetailPersonalDataBox } from './components'
+import { ContactDetailImageBox, ContactDetailShareBox, ContactDetailSocialBox, ContactDetailTagBox, ContactDetailPersonalDataBox } from './components'
 
 const renderImageBox = (recentContactId) => {
   return (
-      <ConnectDetailImageBox>
+      <ContactDetailImageBox>
         {recentContactId}
-      </ConnectDetailImageBox>
+      </ContactDetailImageBox>
   )
 }
 const renderSocialBox = (recentContactId) => {
   return (
-      <ConnectDetailSocialBox>
+      <ContactDetailSocialBox>
         {recentContactId}
-      </ConnectDetailSocialBox>
+      </ContactDetailSocialBox>
   )
 }
 const renderTagBox = (recentContactId) => {
   return (
-      <ConnectDetailTagBox>
+      <ContactDetailTagBox>
         {recentContactId}
-      </ConnectDetailTagBox>
+      </ContactDetailTagBox>
   )
 }
 const renderPersonalDataBox = (recentContactId) => {
   return (
-      <ConnectDetailPersonalDataBox>
+      <ContactDetailPersonalDataBox>
         {recentContactId}
-      </ConnectDetailPersonalDataBox>
+      </ContactDetailPersonalDataBox>
   )
 }
 const renderShareBox = (recentContactId) => {
   return (
-      <ConnectDetailShareBox>
+      <ContactDetailShareBox>
         {recentContactId}
-      </ConnectDetailShareBox>
+      </ContactDetailShareBox>
   )
 }
 
-const ConnectDetailView = (props) => {
+const ContactDetailView = (props) => {
   let { recentContactId } = props
   return (
     <ScrollView style={{backgroundColor:'white'}}>
@@ -54,4 +54,4 @@ const ConnectDetailView = (props) => {
     </ScrollView>
   )
 }
-export default ConnectDetailView
+export default ContactDetailView

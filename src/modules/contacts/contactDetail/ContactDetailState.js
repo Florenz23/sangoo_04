@@ -14,7 +14,7 @@ export function setRecentContactId() {
 }
 
 // Reducer
-export default function ConnectDetailStateReducer(state = initialState, action = {}) {
+export default function ContactDetailStateReducer(state = initialState, action = {}) {
   switch (action.type) {
     case SETRECENTCONTACTID:
       console.log("detail")

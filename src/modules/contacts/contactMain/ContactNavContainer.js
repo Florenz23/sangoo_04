@@ -7,13 +7,13 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import ConnectViewContainer from "./ConnectViewContainer"
+import ContactViewContainer from "./ContactViewContainer"
 
-class ConnectNavContainer extends Component {
+class ContactNavContainer extends Component {
   static displayName = 'ColorView';
 
   static navigationOptions = {
-    title: 'Connect',
+    title: 'Contact',
     tabBar: () => ({
       icon: (props) => (
         <Icon name='search' size={24} color={props.tintColor} />
@@ -30,9 +30,9 @@ class ConnectNavContainer extends Component {
 
   render() {
     return (
-      <ConnectViewContainer />
+      <ContactViewContainer />
     );
   }
 }
 
-export default ConnectNavContainer;
+export default ContactNavContainer;

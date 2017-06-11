@@ -1,8 +1,8 @@
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import ConnectDetailView from './ConnectDetailView';
+import ContactDetailView from './ContactDetailView';
 import {NavigationActions} from 'react-navigation';
-import * as ConnectDetailStateActions from './ConnectDetailState';
+import * as ContactDetailStateActions from './ContactDetailState';
 
 export default connect(
   (state) => ({
@@ -11,4 +11,4 @@ export default connect(
   (dispatch) => ({
       navigate: bindActionCreators(NavigationActions.navigate, dispatch),
     })
-)(ConnectDetailView)
+)(ContactDetailView)

@@ -107,7 +107,7 @@ const renderData = (contactId) => {
       )
 }
 
-const ConnectDetailShareBox = (props) => {
+const ContactDetailShareBox = (props) => {
   const datas = contacts
   const {children} = props
     return (
@@ -117,4 +117,4 @@ const ConnectDetailShareBox = (props) => {
     )
 }
 
-export default ConnectDetailShareBox
+export default ContactDetailShareBox

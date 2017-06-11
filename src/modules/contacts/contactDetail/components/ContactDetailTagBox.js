@@ -49,7 +49,7 @@ const renderData = (contactId) => {
       )
 }
 
-const ConnectDetailTagBox = (props) => {
+const ContactDetailTagBox = (props) => {
   const datas = contacts
   const {children} = props
     return (
@@ -59,4 +59,4 @@ const ConnectDetailTagBox = (props) => {
     )
 }
 
-export default ConnectDetailTagBox
+export default ContactDetailTagBox
