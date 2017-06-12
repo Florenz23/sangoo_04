@@ -21,7 +21,11 @@ const showContactDetail = (navigate,setRecentContactId,contactId) => {
 const ContactView = (props) => {
   const { navigate, setRecentContactId, contactId } = props
 
-  let datas = realm.objects('User')
+  //TODO hier kann der Login statt finden
+  const userId = "a3"
+  let datas = realm.objects('User').filtered(`userId = "${userId}"`)
+  datas = datas[0]
+  console.log(datas)
   const uri = "./donny-copy.png"
 
     return (

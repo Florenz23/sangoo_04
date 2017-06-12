@@ -10,7 +10,8 @@ import { UserList, User, ConnectUserList, ConnectData, UserData } from './db_mod
 let realm = new Realm({schema: [UserList, User, ConnectUserList, ConnectData, UserData]});
 
 import donny12 from './db_mock_donny'
-import hillary from './db_mock_hillary'
+import hillary from './db_mock_ivanka'
+import zara from './db_mock_zara'
 
 const insertUserInDb = (user,id) => {
   realm.write(() => {
@@ -24,17 +25,19 @@ const insertUserInDb = (user,id) => {
       socialData : user.publicSharedData.socialData,
       hashTagData : user.publicSharedData.hashTagData
     })
-    let donny = realm.create('User', {
+    let newUser = realm.create('User', {
         userId: id,
+        contacts: user.contacts
     })
-    donny.userData.push(userData)
-    donny.publicSharedData.push(sharedData)
+    newUser.userData.push(userData)
+    newUser.publicSharedData.push(sharedData)
   })
 
 }
 const createDummyUser = () => {
   insertUserInDb(donny12,'a1')
   insertUserInDb(hillary,'a2')
+  insertUserInDb(zara,'a3')
 }
 
 const deleteUsers = () => {

@@ -23,7 +23,7 @@ ConnectUserList.schema = {
   name: 'ConnectUserList',
   properties: {
     contactTags:    {type: 'list', objectType: 'ConnectData'},
-    userDataShared:    {type: 'list', objectType: 'ConnectData'},
+    userDataShared:    {type: 'list', objectType: 'UserData'},
   }
 };
 

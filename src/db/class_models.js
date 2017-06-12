@@ -19,3 +19,10 @@ export class UserDataClass {
     this.hashTagData = hashTagData
   }
 }
+
+export class ConnectUserListClass {
+  constructor(contactTags, userDataShared) {
+    this.contactTags = contactTags,
+    this.userDataShared = userDataShared
+  }
+}
