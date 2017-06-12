@@ -7,6 +7,8 @@ import styles from '../../styles/imageBox';
 
 import realm from '../../db_ini'
 
+import { findInDb, findInDbTagText } from '../../../../db/db_helper'
+
 const _getContact = (contactId) => {
 
   const contacts = realm.objects('User')
@@ -35,7 +37,7 @@ const renderData = (contactId) => {
   return (
               <ListItem avatar style={{backgroundColor:'white'}}>
                 <Left>
-                  <Thumbnail source={require('../../../../../img/contacts/donny.png')} />
+                  <Thumbnail source={{uri: findInDbTagText(contact.userData[0].personalData,"tagDescription","Image")}} />
                 </Left>
                 <Body>
                   <Text>{renderSurename(contact)} {renderName(contact)}</Text>

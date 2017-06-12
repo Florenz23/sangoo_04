@@ -1,5 +1,5 @@
 import { ConnectDataClass, UserClass, UserDataClass } from './class_models'
-
+import { donny } from './base64img'
 
 const createConnectData = (description, text) => {
   return new ConnectDataClass(description,text)
@@ -7,6 +7,7 @@ const createConnectData = (description, text) => {
 let donny_userData_personalData_name = createConnectData('Name','Trump')
 let donny_userData_personalData_surname = createConnectData('Vorname','Donald')
 let donny_userData_personalData_phone = createConnectData('Handy','111 1111 111')
+let donny_userData_personalData_image = createConnectData('Image',donny)
 let donny_userData_hashTagData_color = createConnectData('Lieblingsfarbe','blau')
 let donny_userData_hashTagData_hobby = createConnectData('Hobbies','Geld, Immobilien')
 let donny_userData_socialData_facebook = createConnectData('Facebook','https://web.facebook.com/DonaldTrump/?_rdc=1&_rdr')
@@ -30,6 +31,7 @@ let donny_userData_personalData = []
 donny_userData_personalData.push(donny_userData_personalData_surname)
 donny_userData_personalData.push(donny_userData_personalData_name)
 donny_userData_personalData.push(donny_userData_personalData_phone)
+donny_userData_personalData.push(donny_userData_personalData_image)
 
 let donny_userData_socialData = []
 donny_userData_socialData.push(donny_userData_socialData_facebook)

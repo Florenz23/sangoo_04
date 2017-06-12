@@ -6,7 +6,7 @@ import * as ContactDetailStateActions from './ContactDetailState';
 
 export default connect(
   (state) => ({
-    recentContactId: state.getIn(['connect', 'recentContactId']),
+    recentContactId: state.getIn(['contact', 'recentContactId']),
   }),
   (dispatch) => ({
       navigate: bindActionCreators(NavigationActions.navigate, dispatch),

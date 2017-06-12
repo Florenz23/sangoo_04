@@ -7,7 +7,9 @@ import styles from '../styles/styles';
 
 import realm from "../db_ini"
 
-import { findInDb } from '../../../db/db_helper'
+import { findInDb, findInDbTagText } from '../../../db/db_helper'
+
+import { base64Icon, donny } from '../../../db/base64img'
 
 const showContactDetail = (navigate,setRecentContactId,contactId) => {
   navigate({routeName: 'ConnectDetail'})
@@ -21,8 +23,7 @@ const ConnectView = (props) => {
   const { navigate, setRecentContactId, contactId } = props
 
   let datas = realm.objects('User')
-  console.log(datas.length)
-  console.log(datas[0].userData[0].personalData[0].tagDescription)
+  const uri = "./donny-copy.png"
 
     return (
       <Container style={styles.container}>
@@ -31,7 +32,7 @@ const ConnectView = (props) => {
             dataArray={datas} renderRow={data =>
               <ListItem avatar onPress={() => showContactDetail(navigate,setRecentContactId,data.userId)}>
                 <Left>
-                  <Thumbnail source={require('../../../../img/contacts/donny.png')} />
+                  <Thumbnail source={{uri: findInDbTagText(data.userData[0].personalData,"tagDescription","Image")}} />
                 </Left>
                 <Body>
                   <Text>

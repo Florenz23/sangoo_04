@@ -7,6 +7,8 @@ import styles from '../../styles/imageBox';
 
 import realm from '../../db_ini'
 
+import { findInDb, findInDbTagText } from '../../../../db/db_helper'
+
 const _getContact = (contactId) => {
 
   const contacts = realm.objects('User')
@@ -31,11 +33,10 @@ const renderName = (contact) => {
 //TODO hier das ...64 Bild aus der Datenbank auslesen, also kein require mehr
 const renderData = (contactId) => {
   const contact = _getContact(contactId)
-  console.log(contact.userData[0].personalData)
   return (
               <ListItem avatar style={{backgroundColor:'white'}}>
                 <Left>
-                  <Thumbnail source={require('../../../../../img/contacts/donny.png')} />
+                  <Thumbnail source={{uri: findInDbTagText(contact.userData[0].personalData,"tagDescription","Image")}} />
                 </Left>
                 <Body>
                   <Text>{renderSurename(contact)} {renderName(contact)}</Text>

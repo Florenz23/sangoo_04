@@ -11,6 +11,7 @@ const initialState = Map({
 const SETRECENTCONTACTID = 'ContactState/SETRECENTCONTACTID'
 // Action creators
 export function setRecentContactId(contactId) {
+  console.log(`state ${contactId}`)
   return {
     type: SETRECENTCONTACTID,
     payload : {

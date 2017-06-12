@@ -34,7 +34,6 @@ const changeShareStatus = () => {
 }
 
 const renderCheckBox = (tagDescription,i,checked) => {
-  console.log(tagDescription)
     return (
             <ListItem key={i} button onPress={() => changeShareStatus()}>
               <CheckBox color="green" checked={checked} onPress={() => changeShareStatus()} />

@@ -1,14 +1,16 @@
 import { ConnectDataClass, UserClass, UserDataClass } from './class_models'
+import { ivanka } from './base64img'
 
 
 const createConnectData = (description, text) => {
   return new ConnectDataClass(description,text)
 }
-let hillary_userData_personalData_name = createConnectData('Name','Clinton')
-let hillary_userData_personalData_surname = createConnectData('Vorname','Hillary')
+let hillary_userData_personalData_name = createConnectData('Name','Trump')
+let hillary_userData_personalData_surname = createConnectData('Vorname','Ivanka')
 let hillary_userData_personalData_phone = createConnectData('Handy','2341234 12341234')
-let hillary_userData_hashTagData_color = createConnectData('Aufenthaltsort','Gefängnis')
-let hillary_userData_hashTagData_hobby = createConnectData('Interessen','Geld Korruption')
+let hillary_userData_personalData_image = createConnectData('Image',ivanka)
+let hillary_userData_hashTagData_color = createConnectData('Lieblingsstyle','Bizz')
+let hillary_userData_hashTagData_hobby = createConnectData('Interessen','Mode, Beauty')
 let hillary_userData_socialData_facebook = createConnectData('Facebook','https://web.facebook.com/DonaldTrump/?_rdc=1&_rdr')
 let hillary_userData_socialData_linkedIn = createConnectData('LinkedIn','https://www.linkedin.com/in/donald-trump-jr-4454b862/?locale=de_DE')
 let hillary_userData_socialData_twitter = createConnectData('Twitter','https://twitter.com/realdonaldtrump?lang=de')
@@ -30,6 +32,7 @@ let hillary_userData_personalData = []
 hillary_userData_personalData.push(hillary_userData_personalData_surname)
 hillary_userData_personalData.push(hillary_userData_personalData_name)
 hillary_userData_personalData.push(hillary_userData_personalData_phone)
+hillary_userData_personalData.push(hillary_userData_personalData_image)
 
 let hillary_userData_socialData = []
 hillary_userData_socialData.push(hillary_userData_socialData_facebook)

@@ -9,18 +9,20 @@ import realm from "../db_ini"
 
 import { findInDb, findInDbTagText } from '../../../db/db_helper'
 
+
 const showContactDetail = (navigate,setRecentContactId,contactId) => {
   navigate({routeName: 'ContactDetail'})
   setRecentContactId(contactId)
 }
+
+
 //TODO user ListView from realm
 
 const ContactView = (props) => {
   const { navigate, setRecentContactId, contactId } = props
 
   let datas = realm.objects('User')
-  console.log(datas.length)
-  console.log(datas[0].userData[0].personalData[0].tagDescription)
+  const uri = "./donny-copy.png"
 
     return (
       <Container style={styles.container}>
@@ -29,13 +31,11 @@ const ContactView = (props) => {
             dataArray={datas} renderRow={data =>
               <ListItem avatar onPress={() => showContactDetail(navigate,setRecentContactId,data.userId)}>
                 <Left>
-                  <Thumbnail source={require('../../../../img/contacts/donny.png')} />
+                  <Thumbnail source={{uri: findInDbTagText(data.userData[0].personalData,"tagDescription","Image")}} />
                 </Left>
                 <Body>
                   <Text>
                     {findInDb(data.userData[0].personalData,"tagDescription","Vorname").tagText}
-                    {" "}
-                    {findInDbTagText(data.userData[0].personalData,"tagDescription","Name")}
                   </Text>
                   <Text numberOfLines={1} note>{data.publicSharedData[0].hashTagData[0].tagText}</Text>
                 </Body>

@@ -19,7 +19,9 @@ const reducers = {
 
   threadDetail : ThreadDetailStateReducer,
 
-  contacts : ContactStateReducer,
+  contact : ContactStateReducer,
+
+  contactDetail : ContactDetailStateReducer,
 
   connect : ConnectStateReducer,
 
