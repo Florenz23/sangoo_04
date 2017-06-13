@@ -23,9 +23,11 @@ const ContactView = (props) => {
 
   //TODO hier kann der Login statt finden
   const userId = "a3"
-  let datas = realm.objects('User').filtered(`userId = "${userId}"`)
-  datas = datas[0]
+  let datas
+  datas = realm.objects('User').filtered(`userId = "${userId}"`)
   console.log(datas)
+  console.log(datas[0].contacts[0].userDataShared[0].personalData[0].tagDescription)
+  datas = datas[0].contacts
   const uri = "./donny-copy.png"
 
     return (
@@ -35,13 +37,13 @@ const ContactView = (props) => {
             dataArray={datas} renderRow={data =>
               <ListItem avatar onPress={() => showContactDetail(navigate,setRecentContactId,data.userId)}>
                 <Left>
-                  <Thumbnail source={{uri: findInDbTagText(data.userData[0].personalData,"tagDescription","Image")}} />
+                  <Thumbnail source={{uri: findInDbTagText(data.contactTags,"tagDescription","Image")}} />
                 </Left>
                 <Body>
                   <Text>
-                    {findInDb(data.userData[0].personalData,"tagDescription","Vorname").tagText}
+                    {findInDb(data.contactTags,"tagDescription","Vorname").tagText}
                   </Text>
-                  <Text numberOfLines={1} note>{data.publicSharedData[0].hashTagData[0].tagText}</Text>
+                  <Text numberOfLines={1} note>{data.userDataShared[0].hashTagData[0].tagText}</Text>
                 </Body>
                 <Right>
                 <Icon ios='md-add' android="md-add" style={{fontSize: 25, color: 'black'}}/>

@@ -14,6 +14,9 @@ import hillary from './db_mock_ivanka'
 import zara from './db_mock_zara'
 
 const insertUserInDb = (user,id) => {
+  const contactArray = []
+  let contactUserData
+  let ConnectUserList
   realm.write(() => {
     let userData = realm.create('UserData' , {
       personalData : user.userData.personalData,
@@ -27,8 +30,22 @@ const insertUserInDb = (user,id) => {
     })
     let newUser = realm.create('User', {
         userId: id,
-        contacts: user.contacts
     })
+    console.log(user.contacts)
+    for (var i in user.contacts) {
+      console.log(i)
+      console.log(user.contacts[i])
+      contactUserData = realm.create('UserData' , {
+        personalData : user.contacts[i].userDataShared.personalData,
+        socialData : user.contacts[i].userDataShared.socialData,
+        hashTagData : user.contacts[i].userDataShared.hashTagData
+      })
+      connectUserList = realm.create('ConnectUserList' , {
+        contactTags : user.contacts[i].contactTags,
+      })
+      connectUserList.userDataShared.push(connectUserList)
+      newUser.contacts.push(connectUserList)
+    }
     newUser.userData.push(userData)
     newUser.publicSharedData.push(sharedData)
   })
