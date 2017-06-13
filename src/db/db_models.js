@@ -22,6 +22,7 @@ export class ConnectUserList {}
 ConnectUserList.schema = {
   name: 'ConnectUserList',
   properties: {
+    userId:    {type: 'string'},
     contactTags:    {type: 'list', objectType: 'ConnectData'},
     userDataShared:    {type: 'list', objectType: 'UserData'},
   }

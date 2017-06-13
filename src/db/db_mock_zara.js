@@ -64,7 +64,7 @@ contact_donny_userDataShared_tag.push(donny12.userData.hashTagData[0])
 contact_donny_userDataShared_tag.push(donny12.userData.hashTagData[1])
 
 let contact_donny_userDataShared = new UserDataClass(contact_donny_userDataShared_private,contact_donny_userDataShared_social, contact_donny_userDataShared_tag)
-let contact_donny = new ConnectUserListClass(contact_donny_tags,contact_donny_userDataShared)
+let contact_donny = new ConnectUserListClass(donny12.userId,contact_donny_tags,contact_donny_userDataShared)
 
 // Ivanka]
 let contact_ivanka_tags = []
@@ -80,7 +80,7 @@ contact_ivanka_userDataShared_tag.push(ivanka.userData.hashTagData[0])
 contact_ivanka_userDataShared_tag.push(ivanka.userData.hashTagData[1])
 
 let contact_ivanka_userDataShared = new UserDataClass(contact_ivanka_userDataShared_private,contact_ivanka_userDataShared_social, contact_ivanka_userDataShared_tag)
-let contact_ivanka = new ConnectUserListClass(contact_ivanka_tags,contact_ivanka_userDataShared)
+let contact_ivanka = new ConnectUserListClass(ivanka.userId, contact_ivanka_tags,contact_ivanka_userDataShared)
 
 let contacts = [contact_donny,contact_ivanka]
 let zara_user = new UserClass('a3',userDataClass,publicSharedDataClass,contacts)

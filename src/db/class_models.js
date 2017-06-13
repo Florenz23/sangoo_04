@@ -21,7 +21,8 @@ export class UserDataClass {
 }
 
 export class ConnectUserListClass {
-  constructor(contactTags, userDataClass) {
+  constructor(userId, contactTags, userDataClass) {
+    this.userId = userId,
     this.contactTags = contactTags,
     this.userDataShared = userDataClass
   }

@@ -25,8 +25,6 @@ const ContactView = (props) => {
   const userId = "a3"
   let datas
   datas = realm.objects('User').filtered(`userId = "${userId}"`)
-  console.log(datas)
-  console.log(datas[0].contacts[0].userDataShared[0].personalData[0].tagDescription)
   datas = datas[0].contacts
   const uri = "./donny-copy.png"
 

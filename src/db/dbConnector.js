@@ -42,6 +42,7 @@ const insertUserInDb = (user,id) => {
       })
       connectUserList = realm.create('ConnectUserList' , {
         contactTags : user.contacts[i].contactTags,
+        userId : user.contacts[i].userId,
       })
       connectUserList.userDataShared.push(connectUserList)
       newUser.contacts.push(connectUserList)
