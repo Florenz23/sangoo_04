@@ -1,5 +1,6 @@
 import React from 'react'
-import { TouchableHighlight,TouchableOpacity, View, StyleSheet, Text } from 'react-native'
+import { TouchableHighlight,TouchableOpacity, View, StyleSheet, Text} from 'react-native'
+import { Toast } from 'native-base'
 
 import Icon from 'react-native-vector-icons/Ionicons'
 import Awesome from 'react-native-vector-icons/FontAwesome';
@@ -10,13 +11,24 @@ const joClick = () => {
 
 const _onPressButton= () => {
     console.log("You tapped the button!");
-  }
+}
+
+const _sendConnectRequest = (connectWithUser) => {
+  console.log("request")
+  connectWithUser()
+  Toast.show({
+      text: 'Kontaktanfrage gesendet',
+      position: 'top',
+      duration: 3000,
+      type: 'success'
+  })
+}
 
 const PostConnectBox = (props) => {
   const {children,connectWithUser} = props
   return (
           <View style={styles.postRatingContainer}>
-          <TouchableOpacity onPress={() => connectWithUser()}>
+          <TouchableOpacity onPress={() => _sendConnectRequest(connectWithUser)}>
             <Text >
               <Awesome style={styles.postRatingButtons} name="plus-circle"  />
             </Text>

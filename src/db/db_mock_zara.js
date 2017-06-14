@@ -3,6 +3,7 @@ import { zara } from './base64img'
 
 import donny12 from './db_mock_donny'
 import ivanka from './db_mock_ivanka'
+import tanja from './db_mock_tanja'
 
 const createConnectData = (description, text) => {
   return new ConnectDataClass(description,text)
@@ -68,7 +69,7 @@ const createUser = () => {
     let contact_donny_userDataShared = new UserDataClass(contact_donny_userDataShared_private,contact_donny_userDataShared_social, contact_donny_userDataShared_tag)
     let contact_donny = new ConnectUserListClass(donny12.userId,contact_donny_tags,contact_donny_userDataShared)
 
-    // Ivanka]
+    // Ivanka
     let contact_ivanka_tags = []
     contact_ivanka_tags.push(ivanka.userData.personalData[0])
     contact_ivanka_tags.push(ivanka.userData.personalData[1])
@@ -84,7 +85,24 @@ const createUser = () => {
     let contact_ivanka_userDataShared = new UserDataClass(contact_ivanka_userDataShared_private,contact_ivanka_userDataShared_social, contact_ivanka_userDataShared_tag)
     let contact_ivanka = new ConnectUserListClass(ivanka.userId, contact_ivanka_tags,contact_ivanka_userDataShared)
 
-    let contacts = [contact_donny,contact_ivanka]
+    // Tanja
+    let contact_tanja_tags = []
+    contact_tanja_tags.push(tanja.userData.personalData[0])
+    contact_tanja_tags.push(tanja.userData.personalData[1])
+    contact_tanja_tags.push(tanja.userData.personalData[3])
+    let contact_tanja_userDataShared_private = []
+    let contact_tanja_userDataShared_social = []
+    let contact_tanja_userDataShared_tag = []
+    contact_tanja_userDataShared_private.push(tanja.userData.personalData[2])
+    contact_tanja_userDataShared_social.push(tanja.userData.socialData[0])
+    contact_tanja_userDataShared_tag.push(tanja.userData.hashTagData[0])
+    contact_tanja_userDataShared_tag.push(tanja.userData.hashTagData[1])
+
+    let contact_tanja_userDataShared = new UserDataClass(contact_tanja_userDataShared_private,contact_tanja_userDataShared_social, contact_tanja_userDataShared_tag)
+    let contact_tanja = new ConnectUserListClass(tanja.userId, contact_tanja_tags,contact_tanja_userDataShared)
+
+
+    let contacts = [contact_donny,contact_ivanka, contact_tanja]
     let zara_user = new UserClass('a3',userDataClass,publicSharedDataClass,contacts)
     return zara_user
 

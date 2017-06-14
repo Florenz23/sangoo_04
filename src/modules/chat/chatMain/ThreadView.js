@@ -22,7 +22,7 @@ const showDetail = (navigate,showPostDetail,postId) => {
 }
 const colors = ['#7cdbd5','#f53240','#f9be02']
 
-const renderPosts = (posts,connectWithUser,ratePostDown,showPostDetail,navigate) => {
+const renderPosts = (posts,connectWithUser,ratePostUp, ratePostDown,showPostDetail,navigate) => {
   var i = 0
   return posts.map( post => {
     //TODO should be done better

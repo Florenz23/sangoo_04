@@ -12,6 +12,7 @@ let realm = new Realm({schema: [UserList, User, ConnectUserList, ConnectData, Us
 import donny12 from './db_mock_donny'
 import hillary from './db_mock_ivanka'
 import zara from './db_mock_zara'
+import tanja from './db_mock_tanja'
 
 const insertUserInDb = (user,id) => {
   const contactArray = []
@@ -53,6 +54,13 @@ const createDummyUser = () => {
   insertUserInDb(donny12,'a1')
   insertUserInDb(hillary,'a2')
   insertUserInDb(zara,'a3')
+  insertUserInDb(tanja,'a4')
+  insertUserInDb(tanja,'a5')
+  insertUserInDb(tanja,'a6')
+  insertUserInDb(tanja,'a7')
+  insertUserInDb(tanja,'a8')
+  insertUserInDb(tanja,'a9')
+  insertUserInDb(tanja,'a10')
 }
 
 const deleteUsers = () => {
@@ -73,5 +81,4 @@ const iniRealm = () => {
 iniRealm()
 
 // Query Realm for all cars with a high mileage
-
 export default realm
