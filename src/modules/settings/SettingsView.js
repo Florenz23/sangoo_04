@@ -1,41 +1,43 @@
-import React, {PropTypes, Component} from 'react';
-import {
-  Button,
-  View,
-  StyleSheet
-} from 'react-native';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import React, { Component } from 'react';
+import { StatusBar } from 'react-native';
+import { connect } from 'react-redux';
+import { Container, Header, Title, Content, Text, H3, Button, Icon, Footer, FooterTab, Left, Right, Body, Toast } from 'native-base';
 
-const color = () => Math.floor(255 * Math.random());
+import styles from './styles';
 
-/**
- * Sample view to demonstrate StackNavigator
- * @TODO remove this module in a live application.
- */
-const open = (navigate) => {
-  navigate({routeName : 'InfiniteColorStack'})
-}
+export default class SettingsView extends Component {
 
-const SettingsView = (props) => {
-  const {navigate} = props
-  const background = `rgba(${color()},${color()},${color()}, 1)`
-
-  const buttonText = 'Open in Stack Navigator';
-
-  return (
-      <View style={[styles.container, {backgroundColor: background}]}>
-        <Button color='#ee7f06' title={buttonText} onPress={() => open(navigate)}/>
-      </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+  static propTypes = {
+    openDrawer: React.PropTypes.func,
   }
-});
+  constructor(props) {
+    super(props);
+  }
+  empty() {
+    console.log("moin")
+    Toast.hide()
+    Toast.close()
+    this.state = {
+      showToast : false
+    }
+  }
 
-export default SettingsView;
+  render() {
+    return (
+      <Container style={styles.container}>
+
+        <Content padder>
+          <Button onPress={()=> Toast.show({
+              text: 'Kontaktanfrage gesendet',
+              position: 'top',
+              duration: 3000,
+              type: 'success'
+            })}>
+            <Text>Toast</Text>
+          </Button>
+        </Content>
+      </Container>
+    );
+  }
+}
