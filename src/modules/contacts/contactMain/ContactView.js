@@ -44,7 +44,6 @@ const ContactView = (props) => {
                   <Text numberOfLines={1} note>{data.userDataShared[0].hashTagData[0].tagText}</Text>
                 </Body>
                 <Right>
-                <Icon ios='md-add' android="md-add" style={{fontSize: 25, color: 'black'}}/>
                 </Right>
               </ListItem>
         }

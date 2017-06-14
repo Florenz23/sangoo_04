@@ -18,10 +18,11 @@ const activeColor = 'white';
 // TabNavigator is nested inside StackNavigator
 // here roots are defined
 export const MainScreenNavigator = TabNavigator({
-  Chat: {screen: ThreadNavContainer},
-  Connect: {screen: ConnectNavContainer},
+  Chat: {screen: ConnectNavContainer},
+  Connect: {screen: ThreadNavContainer},
   Contacts : {screen: ContactNavContainer},
   Settings : {screen: SettingsNavContainer}, }, {
+  // Settings : {screen: SettingsNavContainer}, }, {
   tabBarOptions: {
     ...Platform.select({
       android: {
@@ -34,7 +35,7 @@ export const MainScreenNavigator = TabNavigator({
 });
 
 MainScreenNavigator.navigationOptions = {
-  title: 'Sangoo_04',
+  title: 'Zuerkl',
   header: {
     titleStyle: {color: 'white'},
     style: {

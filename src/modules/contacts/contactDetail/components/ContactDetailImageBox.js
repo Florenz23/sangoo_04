@@ -9,23 +9,29 @@ import realm from '../../db_ini'
 
 import { findInDb, findInDbTagText } from '../../../../db/db_helper'
 
+import fixedUserId from '../../../../mock/logged_in_user_id'
+
 const _getContact = (contactId) => {
-
-  const contacts = realm.objects('User')
-  const searchResult = contacts.filtered(`userId = "${contactId}"`)
-  const recent_contact = searchResult[0]
-  return recent_contact
-
+  //TODO Login
+  // console.log(contactId)
+  const userId = fixedUserId
+  const users = realm.objects('User')
+  const searchResult = users.filtered(`userId = "${userId}"`)
+  const recent_user = searchResult[0]
+  const contacts = recent_user.contacts
+  console.log(contactId)
+  let recent_contact = contacts.filtered(`userId = "${contactId}"`)
+  return searchResult[0].contacts[0]
 }
 
 const renderSurename = (contact) => {
-  const searchResult = contact.userData[0].personalData.filtered(`tagDescription = "Vorname"`)[0]
+  const searchResult = contact.userDataShared[0].personalData.filtered(`tagDescription = "Vorname"`)[0]
     if (searchResult) {
       return searchResult.tagText
     }
 }
 const renderName = (contact) => {
-  const searchResult = contact.publicSharedData[0].personalData.filtered(`tagDescription = "Name"`)[0]
+  const searchResult = contact.userDataShared[0].personalData.filtered(`tagDescription = "Name"`)[0]
     if (searchResult) {
       return searchResult.tagText
     }
@@ -36,7 +42,7 @@ const renderData = (contactId) => {
   return (
               <ListItem avatar style={{backgroundColor:'white'}}>
                 <Left>
-                  <Thumbnail source={{uri: findInDbTagText(contact.userData[0].personalData,"tagDescription","Image")}} />
+                  <Thumbnail source={{uri: findInDbTagText(contact.userDataShared[0].personalData,"tagDescription","Image")}} />
                 </Left>
                 <Body>
                   <Text>{renderSurename(contact)} {renderName(contact)}</Text>

@@ -13,10 +13,10 @@ class ContactNavContainer extends Component {
   static displayName = 'ColorView';
 
   static navigationOptions = {
-    title: 'Contact',
+    title: 'Contacts',
     tabBar: () => ({
       icon: (props) => (
-        <Icon name='search' size={24} color={props.tintColor} />
+        <Icon name='contacts' size={24} color={props.tintColor} />
       )
     }),
     // TODO: move this into global config?

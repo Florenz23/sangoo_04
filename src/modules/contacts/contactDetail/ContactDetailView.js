@@ -42,7 +42,6 @@ const renderShareBox = (recentContactId) => {
 
 const ContactDetailView = (props) => {
   let { recentContactId } = props
-  console.log(`contact detail ${recentContactId}`)
   return (
     <ScrollView style={{backgroundColor:'white'}}>
       {renderImageBox(recentContactId)}

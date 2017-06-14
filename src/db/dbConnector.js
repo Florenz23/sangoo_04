@@ -31,10 +31,7 @@ const insertUserInDb = (user,id) => {
     let newUser = realm.create('User', {
         userId: id,
     })
-    console.log(user.contacts)
     for (var i in user.contacts) {
-      console.log(i)
-      console.log(user.contacts[i])
       contactUserData = realm.create('UserData' , {
         personalData : user.contacts[i].userDataShared.personalData,
         socialData : user.contacts[i].userDataShared.socialData,
