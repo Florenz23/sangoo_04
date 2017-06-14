@@ -14,6 +14,7 @@ const RATEPOSTUP = 'ThreadState/RATEPOSTUP';
 const RATEPOSTDOWN = 'ThreadState/RATEPOSTDOWN';
 const ADDNEWPOST = 'ThreadState/ADDNEWPOST';
 const SHOWPOSTDETAIL = 'ThreadState/SHOWPOSTDETAIL'
+const CONNECTWITHUSER = 'ThreadState/CONNECTWITHUSER'
 const RESET = 'CounterState/RESET';
 // Action creators
 export function increment() {
@@ -24,6 +25,9 @@ export function reset() {
 }
 export function ratePostUp() {
   return {type: RATEPOSTUP};
+}
+export function connectWithUser() {
+  return {type: CONNECTWITHUSER};
 }
 export function ratePostDown() {
   return {type: RATEPOSTDOWN};
@@ -47,6 +51,9 @@ export default function ThreadStateReducer(state = initialState, action = {}) {
       return state.update('value', value => value + 1);
     case RATEPOSTUP:
       console.log("up")
+      return state
+    case CONNECTWITHUSER:
+      console.log("connect")
       return state
     case RATEPOSTDOWN:
       console.log("down")

@@ -13,6 +13,7 @@ export default connect(
       threadStateActions: () => dispatch(ThreadStateActions()),
       ratePostUp: () => dispatch(ThreadStateActions.ratePostUp()),
       ratePostDown: () => dispatch(ThreadStateActions.ratePostDown()),
+      connectWithUser: () => dispatch(ThreadStateActions.connectWithUser()),
       addNewPost: () => dispatch(ThreadStateActions.addNewPost()),
       reset: () => dispatch(ThreadStateActions.reset()),
       showPostDetail: (threadId) => dispatch(ThreadStateActions.showPostDetail(threadId)),

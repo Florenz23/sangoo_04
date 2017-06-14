@@ -13,7 +13,7 @@ import { Container } from 'native-base'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
-import { PostRatingBox, PostAddButton, PostTextBox } from './components'
+import { PostConnectBox, PostRatingBox, PostAddButton, PostTextBox } from './components'
 
 
 const showDetail = (navigate,showPostDetail,postId) => {
@@ -22,7 +22,7 @@ const showDetail = (navigate,showPostDetail,postId) => {
 }
 const colors = ['#7cdbd5','#f53240','#f9be02']
 
-const renderPosts = (posts,ratePostUp,ratePostDown,showPostDetail,navigate) => {
+const renderPosts = (posts,connectWithUser,ratePostDown,showPostDetail,navigate) => {
   var i = 0
   return posts.map( post => {
     //TODO should be done better
@@ -37,6 +37,11 @@ const renderPosts = (posts,ratePostUp,ratePostDown,showPostDetail,navigate) => {
           key={post.get('id')}
           onPress={() => showDetail(navigate,showPostDetail,postId)}
           >
+            <PostConnectBox key="a" style={styles.postRatingContainer}
+            connectWithUser={() => connectWithUser()}
+            >
+              {post}
+            </PostConnectBox>
             <PostTextBox key="jo" >
             {post}
             </PostTextBox>
@@ -53,6 +58,7 @@ const renderPosts = (posts,ratePostUp,ratePostDown,showPostDetail,navigate) => {
 
 const ThreadView = (props) => {
   const {
+      connectWithUser,
       ratePostUp,
       ratePostDown,
       addNewPost,
@@ -63,7 +69,7 @@ const ThreadView = (props) => {
     return (
       <Container>
           <ScrollView>
-            {renderPosts(props.posts,ratePostUp,ratePostDown,showPostDetail,navigate)}
+            {renderPosts(props.posts,connectWithUser,ratePostUp,ratePostDown,showPostDetail,navigate)}
           </ScrollView>
           <PostAddButton
           addNewPost={() => addNewPost()}
