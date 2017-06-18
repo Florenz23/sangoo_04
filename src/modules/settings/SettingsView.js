@@ -14,29 +14,10 @@ export default class SettingsView extends Component {
   constructor(props) {
     super(props);
   }
-  empty() {
-    console.log("moin")
-    Toast.hide()
-    Toast.close()
-    this.state = {
-      showToast : false
-    }
-  }
 
   render() {
     return (
       <Container style={styles.container}>
-
-        <Content padder>
-          <Button onPress={()=> Toast.show({
-              text: 'Kontaktanfrage gesendet',
-              position: 'top',
-              duration: 3000,
-              type: 'success'
-            })}>
-            <Text>Toast</Text>
-          </Button>
-        </Content>
       </Container>
     );
   }
