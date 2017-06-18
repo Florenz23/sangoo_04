@@ -1,6 +1,8 @@
 import React from 'react'
 import { TouchableHighlight,TouchableOpacity, View, StyleSheet, Text } from 'react-native'
 
+import PostConnectBox from './PostConnectBox'
+
 import Icon from 'react-native-vector-icons/Ionicons'
 import Awesome from 'react-native-vector-icons/FontAwesome';
 
@@ -13,23 +15,17 @@ const _onPressButton= () => {
   }
 
 const PostRatingBox = (props) => {
-  const {children,ratePostUp,ratePostDown} = props
+  const {children,ratePostUp,ratePostDown,connectWithUser} = props
   return (
           <View style={styles.postRatingContainer}>
+          <PostConnectBox connectWithUser = {() => connectWithUser() }>
+          </PostConnectBox>
+          <Text style={styles.postRatingItems}>
+            {children.get('rating')}
+          </Text>
           <TouchableOpacity onPress={() => ratePostUp()}>
             <Text >
-              <Icon style={styles.postRatingButtons} name="ios-arrow-up"  />
-            </Text>
-          </TouchableOpacity>
-            <Text style={styles.postRatingValue}>
-              {children.get('rating')}
-            </Text>
-          <TouchableOpacity onPress={() => ratePostDown()}>
-            <Text>
-              <Icon style={styles.postRatingButtons} name="ios-arrow-down"  />
-            </Text>
-            <Text >
-              <Awesome style={styles.postRatingButtons} name="plus-circle"  />
+              <Icon style={styles.postRatingItems} name="ios-thumbs-up"  />
             </Text>
           </TouchableOpacity>
           </View>
@@ -45,33 +41,23 @@ var styles = StyleSheet.create({
   postTextContainer : {
     flex : 4
   },
-  postText : {
-    fontSize: 25,
-    color: 'white',
-  },
   postRatingContainer : {
     flex : 1,
     flexDirection : 'column',
     justifyContent : 'center',
     alignItems : 'center'
   },
-  postRatingButtons : {
-    fontSize : 50,
-    color : '#4F8EF7'
+  postRatingButton : {
+    marginBottom : 20,
   },
-  postRatingValue : {
+  postRatingItems : {
     fontSize : 30,
     color : '#4F8EF7'
   },
-  postReplyContainer : {
-    flexDirection : 'column',
+  postRatingConnect : {
+    fontSize : 50,
+    color : '#4F8EF7',
   },
-  postReplyIcon : {
-    fontSize : 10,
-  },
-  postReplyNumber : {
-    fontSize : 10,
-  }
 });
 
 export default PostRatingBox

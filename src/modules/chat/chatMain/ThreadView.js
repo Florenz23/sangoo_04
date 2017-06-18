@@ -43,6 +43,7 @@ const renderPosts = (posts,connectWithUser,ratePostUp, ratePostDown,showPostDeta
             <PostRatingBox key="nö" style={styles.postRatingContainer}
             ratePostUp={() => ratePostUp()}
             ratePostDown={() => ratePostDown()}
+            connectWithUser={() => connectWithUser()}
             >
               {post}
             </PostRatingBox>
