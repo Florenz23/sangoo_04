@@ -1,0 +1,18 @@
+{
+	"liveValues": [
+		{
+			"range": {
+				"from": {
+					"line": 30,
+					"ch": 14
+				},
+				"to": {
+					"line": 30,
+					"ch": 16
+				}
+			},
+			"type": "number",
+			"name": "FontSize"
+		}
+	]
+}

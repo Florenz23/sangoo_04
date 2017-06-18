@@ -7,7 +7,7 @@ const PostTextBox = (props) => {
   const { children } = props
   return (
           <View style={styles.postTextContainer}>
-            <Text style={styles.postText }> {children.get('message')} </Text>
+            <Text style={styles.postText }>{children.get('message')}</Text>
             <View style={styles.postReplyContainer}>
               <Text >
                 <FontAwesome style={styles.postReplyIcon} name="commenting-o"  />
@@ -28,7 +28,7 @@ var styles = StyleSheet.create({
     flex : 4
   },
   postText : {
-    fontSize: 25,
+    fontSize: 20,
     color: 'white',
   },
   postRatingContainer : {

@@ -2,6 +2,7 @@ import React from 'react'
 import { TouchableHighlight,TouchableOpacity, View, StyleSheet, Text } from 'react-native'
 
 import Icon from 'react-native-vector-icons/Ionicons'
+import Awesome from 'react-native-vector-icons/FontAwesome';
 
 const joClick = () => {
   console.log("up");
@@ -26,6 +27,9 @@ const PostRatingBox = (props) => {
           <TouchableOpacity onPress={() => ratePostDown()}>
             <Text>
               <Icon style={styles.postRatingButtons} name="ios-arrow-down"  />
+            </Text>
+            <Text >
+              <Awesome style={styles.postRatingButtons} name="plus-circle"  />
             </Text>
           </TouchableOpacity>
           </View>

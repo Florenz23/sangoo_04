@@ -29,9 +29,6 @@ const PostConnectBox = (props) => {
   return (
           <View style={styles.postRatingContainer}>
           <TouchableOpacity onPress={() => _sendConnectRequest(connectWithUser)}>
-            <Text >
-              <Awesome style={styles.postRatingButtons} name="plus-circle"  />
-            </Text>
           </TouchableOpacity>
           </View>
   )

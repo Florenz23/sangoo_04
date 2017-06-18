@@ -37,11 +37,6 @@ const renderPosts = (posts,connectWithUser,ratePostUp, ratePostDown,showPostDeta
           key={post.get('id')}
           onPress={() => showDetail(navigate,showPostDetail,postId)}
           >
-            <PostConnectBox key="a" style={styles.postRatingContainer}
-            connectWithUser={() => connectWithUser()}
-            >
-              {post}
-            </PostConnectBox>
             <PostTextBox key="jo" >
             {post}
             </PostTextBox>
@@ -135,7 +130,7 @@ var styles = StyleSheet.create({
     flex : 4
   },
   postText : {
-    fontSize: 25,
+    fontSize: 54,
     color: 'white',
   },
   postRatingContainer : {

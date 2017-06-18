@@ -6,6 +6,8 @@ import Realm from 'realm'
 
 import { UserList, User, ConnectUserList, ConnectData, UserData } from './db_models';
 
+import { newTanjaContact } from './db_mock_tanja_contact_add'
+
 // Get the default Realm with support for our objects
 let realm = new Realm({schema: [UserList, User, ConnectUserList, ConnectData, UserData]});
 
@@ -48,8 +50,15 @@ const insertUserInDb = (user,id) => {
     newUser.userData.push(userData)
     newUser.publicSharedData.push(sharedData)
   })
-
 }
+
+const addTanja = () => {
+  const zara = realm.objects('User').filtered('userId = "a3"')[0]
+  realm.write(() => {
+      zara.contacts.push(newTanjaContact)
+  })
+}
+
 const createDummyUser = () => {
   insertUserInDb(donny12,'a1')
   insertUserInDb(hillary,'a2')
@@ -76,6 +85,7 @@ const iniRealm = () => {
   deleteUsers()
   if (contactsRealm.length == 0 ){
     createDummyUser()
+    //addTanja()
   }
 }
 iniRealm()

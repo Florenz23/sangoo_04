@@ -3,12 +3,12 @@ package com.sangoo_04;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.oblador.vectoricons.VectorIconsPackage;
 import com.github.xfumihiro.react_native_image_to_base64.ImageToBase64Package;
 import io.realm.react.RealmReactPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
-import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.soloader.SoLoader;
 
 import java.util.Arrays;
@@ -25,10 +25,10 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-        new MainReactPackage(),
+          new MainReactPackage(),
+            new VectorIconsPackage(),
             new ImageToBase64Package(),
-            new RealmReactPackage(),
-        new VectorIconsPackage()
+            new RealmReactPackage()
       );
     }
   };
