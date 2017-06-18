@@ -4,7 +4,7 @@ import Reply from './Reply'
 import Post from './Post'
 
 var post1= "Hat jemand verstanden, was bei dem Vortrag Gehaltsverhandlung einem die Grafik auf Folie 10 sagen sollte?"
-var post2 = "Im Vortrag Industrie 4.0 waren aber einige ganz schön alte Daten verbaut und der Text war zu klein und viel zu viel…….."
+var post2 = "Im Vortrag Industrie 4.0 waren aber einige ganz schön alte Daten verbaut und der Text war zu klein und viel zu viel..."
 var post3 = "Vortrag: Energiewende im 21. Jh im Netz und Controlling Zeit:16.10 Uhr Raum: 201 Vortragender: Prof. Dr. Kleist, CEO von DRT"
 var post4 = "Weiß jemand, ob die Firma DRT Bohrtechnik heute da ist?"
 
@@ -12,8 +12,10 @@ const reply_message_11 = "Nein, tut mir Leid"
 const reply_message_12 = "Dort wurde die Vernetzungszeiten vom 3-D Drucker mit dem Computergesteuerten Roboterarm aufgetragen. Dabei war der Fokus auf dem Ablaufprotokoll 4a."
 const reply_message_13 = "Hat jemand auch noch die Kontaktdaten von dem Vortragenden?"
 const reply_message_14 = "Danke für die Antwort. Gerhard Halber bin noch bis 16 Uhr da, kannst mich also bequem adden."
-const reply_message_21 = "… Quellen wären auch hilfreich gewesen"
-const reply_message_22 = "Danke für die Hilfe, ich werde die Präsentation nochmal überarbeiten."
+const reply_message_21 = "Quellen wären auch hilfreich gewesen"
+const reply_message_22 = "Dozent aber sehr sympathisch, hatte wohl keine Zeit gehabt, die Folien noch einmal durchzugehen."
+const reply_message_23 = "Die Grafiken waren durchaus hilfreich."
+const reply_message_24 = "Danke für die Hilfe, ich werde die Präsentation nochmal überarbeiten."
 const reply_message_31 = "Es sind noch 3 Plätze frei, recht informativ."
 const reply_message_32 = "Auch super für #Medientechnik geeignet "
 const reply_message_33 = "Danke habe einen der Plätze besetzt ☺"
@@ -61,6 +63,14 @@ const muserPost2 = {
     { id: 2 ,
       message : reply_message_22,
       rating : 19
+    },
+    { id: 3 ,
+      message : reply_message_23,
+      rating : 22
+    },
+    { id: 4 ,
+      message : reply_message_24,
+      rating : 17
     }
   ],
   bgColor : "#f53240",
@@ -68,7 +78,7 @@ const muserPost2 = {
 const muserPost3 = {
   id : 3,
   message : post3,
-  rating : 35,
+  rating : 50,
   distance : 300,
   replies : [
     { id: 1 ,

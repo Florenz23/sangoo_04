@@ -27,7 +27,7 @@ const ConnectView = (props) => {
 
     return (
       <Container style={styles.container}>
-        <Content>
+        <Content style={{marginTop:10}}>
           <List
             dataArray={datas} renderRow={data =>
               <ListItem avatar onPress={() => showContactDetail(navigate,setRecentContactId,data.userId)}>

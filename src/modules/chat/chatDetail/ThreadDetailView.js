@@ -54,7 +54,7 @@ const renderReplies = (postId,ratePostUp,ratePostDown,showPostDetail,navigate) =
       i = 0
     }
     return (
-        <TouchableOpacity
+        <View
           style={[styles.container,{backgroundColor:colors[i]}]}
           key={post.get('id')}
           onPress={() => navigate({routeName: 'ThreadDetailViewContainer'})}
@@ -68,7 +68,7 @@ const renderReplies = (postId,ratePostUp,ratePostDown,showPostDetail,navigate) =
             >
               {post}
             </PostRatingBox>
-        </TouchableOpacity>
+        </View>
     )
   })
 }
@@ -103,82 +103,12 @@ const circle = {
   height: 80
 };
 
-const styles1 = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white'
-  },
-  userContainer: {
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  userProfilePhoto: {
-    ...circle,
-    alignSelf: 'center'
-  },
-  counterButton: {
-    ...circle,
-    backgroundColor: '#349d4a',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 20
-  },
-  counter: {
-    color: 'white',
-    fontSize: 20,
-    textAlign: 'center'
-  },
-  welcome: {
-    textAlign: 'center',
-    color: 'black',
-    marginBottom: 5,
-    padding: 5
-  },
-  linkButton: {
-    textAlign: 'center',
-    color: '#CCCCCC',
-    marginBottom: 10,
-    padding: 5
-  }
-});
 var styles = StyleSheet.create({
   container: {
     padding : 15,
     marginBottom :6,
     flexDirection : 'row'
   },
-  postTextContainer : {
-    flex : 4
-  },
-  postText : {
-    fontSize: 25,
-    color: 'white',
-  },
-  postRatingContainer : {
-    flex : 1,
-    flexDirection : 'column',
-    justifyContent : 'center',
-    alignItems : 'center'
-  },
-  postRatingButtons : {
-    fontSize : 50,
-    color : '#4F8EF7'
-  },
-  postRatingValue : {
-    fontSize : 30,
-    color : '#4F8EF7'
-  },
-  postReplyContainer : {
-    flexDirection : 'column',
-  },
-  postReplyIcon : {
-    fontSize : 10,
-  },
-  postReplyNumber : {
-    fontSize : 10,
-  }
 });
 
 export default ThreadDetailView;

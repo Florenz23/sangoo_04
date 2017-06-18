@@ -13,6 +13,21 @@
 			},
 			"type": "number",
 			"name": "FontSize"
+		},
+		{
+			"range": {
+				"from": {
+					"line": 45,
+					"ch": 12
+				},
+				"to": {
+					"line": 45,
+					"ch": 29
+				}
+			},
+			"editWith": "colorPicker",
+			"type": "string",
+			"name": "Color"
 		}
 	]
 }

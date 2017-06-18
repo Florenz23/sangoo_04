@@ -2,7 +2,6 @@ import {Platform} from 'react-native';
 import {TabNavigator, StackNavigator} from 'react-navigation';
 
 import CounterViewContainer from '../counter/CounterViewContainer';
-import ColorViewContainer from '../colors/ColorViewContainer';
 import ThreadNavContainer from '../chat/chatMain/ThreadNavContainer';
 import ThreadDetailViewContainer from '../chat/chatDetail/ThreadDetailViewContainer';
 import ContactNavContainer from '../contacts/contactMain/ContactNavContainer';
@@ -12,6 +11,7 @@ import ConnectNavContainer from '../connect/connectMain/ConnectNavContainer';
 import ConnectDetailViewContainer from '../connect/connectDetail/ConnectDetailViewContainer';
 
 
+// const headerColor = 'rgb(20,152,255)';
 const headerColor = '#39babd';
 const activeColor = 'white';
 

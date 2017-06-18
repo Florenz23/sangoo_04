@@ -1,7 +1,0 @@
-export { default as PostBox } from './PostBox'
-export { default as PostAddButton } from './PostAddButton'
-export { default as PostConnect } from './PostConnect'
-export { default as PostText } from './PostText'
-export { default as PostRatingBox } from './PostRatingBox'
-export { default as PostTextBox } from './PostTextBox'
-export { default as ReplyTextBox } from './ReplyTextBox'
