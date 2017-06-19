@@ -16,6 +16,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { PostConnectBox, PostRatingBox, PostAddButton, PostTextBox } from './components'
 
 
+
+
 const showDetail = (navigate,showPostDetail,postId) => {
   navigate({routeName: 'ThreadDetailViewContainer'})
   showPostDetail(postId)

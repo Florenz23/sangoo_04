@@ -102,7 +102,7 @@ const createUser = () => {
     let contact_tanja = new ConnectUserListClass(tanja.userId, contact_tanja_tags,contact_tanja_userDataShared)
 
 
-    let contacts = [contact_donny,contact_ivanka, contact_tanja]
+    let contacts = [contact_donny,contact_ivanka]
     let zara_user = new UserClass('a3',userDataClass,publicSharedDataClass,contacts)
     return zara_user
 

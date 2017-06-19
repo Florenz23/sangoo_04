@@ -40,6 +40,8 @@ const ContactView = (props) => {
                 <Body>
                   <Text>
                     {findInDb(data.contactTags,"tagDescription","Vorname").tagText}
+                    {" "}
+                    {findInDb(data.contactTags,"tagDescription","Name").tagText}
                   </Text>
                   <Text numberOfLines={1} note>{data.userDataShared[0].hashTagData[0].tagText}</Text>
                 </Body>

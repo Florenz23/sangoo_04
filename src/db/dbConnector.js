@@ -52,12 +52,7 @@ const insertUserInDb = (user,id) => {
   })
 }
 
-const addTanja = () => {
-  const zara = realm.objects('User').filtered('userId = "a3"')[0]
-  realm.write(() => {
-      zara.contacts.push(newTanjaContact)
-  })
-}
+
 
 const createDummyUser = () => {
   insertUserInDb(donny12,'a1')
@@ -85,7 +80,7 @@ const iniRealm = () => {
   deleteUsers()
   if (contactsRealm.length == 0 ){
     createDummyUser()
-    //addTanja()
+    // addTanja()
   }
 }
 iniRealm()
