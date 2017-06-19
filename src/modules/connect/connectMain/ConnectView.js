@@ -38,7 +38,11 @@ const ConnectView = (props) => {
                   <Text>
                     {findInDb(data.userData[0].personalData,"tagDescription","Vorname").tagText}
                   </Text>
-                  <Text numberOfLines={1} note>{data.publicSharedData[0].hashTagData[0].tagText}</Text>
+                  <Text numberOfLines={1} note>
+                    {data.publicSharedData[0].hashTagData[0].tagDescription}
+                    {": "}
+                    {data.publicSharedData[0].hashTagData[0].tagText}
+                  </Text>
                 </Body>
                 <Right>
                 <Icon ios='md-add' android="md-add" style={{fontSize: 25, color: 'black'}}/>

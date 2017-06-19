@@ -11,10 +11,7 @@ import { newTanjaContact } from './db_mock_tanja_contact_add'
 // Get the default Realm with support for our objects
 let realm = new Realm({schema: [UserList, User, ConnectUserList, ConnectData, UserData]});
 
-import donny12 from './db_mock_donny'
-import hillary from './db_mock_ivanka'
-import zara from './db_mock_zara'
-import tanja from './db_mock_tanja'
+import {donny12, hillary, zara, tanja, lena, vanessa, diana, max, tina, thomas, justin} from './db_mock_ini'
 
 const insertUserInDb = (user,id) => {
   const contactArray = []
@@ -55,16 +52,16 @@ const insertUserInDb = (user,id) => {
 
 
 const createDummyUser = () => {
-  insertUserInDb(donny12,'a1')
-  insertUserInDb(hillary,'a2')
+  insertUserInDb(lena,'a4')
+  insertUserInDb(justin,'a10')
+  insertUserInDb(vanessa,'a5')
+  insertUserInDb(max,'a7')
+  insertUserInDb(diana,'a6')
   insertUserInDb(zara,'a3')
-  insertUserInDb(tanja,'a4')
-  insertUserInDb(tanja,'a5')
-  insertUserInDb(tanja,'a6')
-  insertUserInDb(tanja,'a7')
-  insertUserInDb(tanja,'a8')
-  insertUserInDb(tanja,'a9')
-  insertUserInDb(tanja,'a10')
+  insertUserInDb(tina,'a8')
+  insertUserInDb(thomas,'a9')
+  insertUserInDb(donny12,'a1')
+  insertUserInDb(tanja,'a2')
 }
 
 const deleteUsers = () => {
