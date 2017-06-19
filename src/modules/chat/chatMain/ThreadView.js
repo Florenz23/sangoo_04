@@ -22,7 +22,12 @@ const showDetail = (navigate,showPostDetail,postId) => {
   navigate({routeName: 'ThreadDetailViewContainer'})
   showPostDetail(postId)
 }
-const colors = ['#7cdbd5','#f53240','#f9be02']
+// const colors = ['#7cdbd5','#f53240','#f9be02']
+// const colors = ['#4abdac','#fc4a1a','#f7b733','#dfdce3']
+// const colors = ['#945d60','#626e60','#af473c','#3c3c3c']
+const colors = ['#e37222','#07889b','#66b9bf','#eeaa7b']
+// const colors = ['#6e3667','#88d317','#66b9bf','#eeaa7b']
+// const colors = ['#6e3667','#88d317','#1a0315','#535353']
 
 const renderPosts = (posts,connectWithUser,ratePostUp, ratePostDown,showPostDetail,navigate) => {
   var i = 0
@@ -30,7 +35,7 @@ const renderPosts = (posts,connectWithUser,ratePostUp, ratePostDown,showPostDeta
     //TODO should be done better
     const postId = post.get('id')
     i++
-    if (i == 3 ) {
+    if (i == 4 ) {
       i = 0
     }
     return (
