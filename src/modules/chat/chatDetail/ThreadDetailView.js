@@ -26,7 +26,7 @@ const renderPost = (postId,connectWithUser,ratePostUp,ratePostDown) => {
   console.log(postId)
     return (
         <View
-          style={[styles.container,{backgroundColor:post.get('bgColor')}]}
+          style={[styles.container,{backgroundColor:'#e37222'}]}
           key={post.get('id')}
           >
             <PostTextBox key="jo" >
@@ -43,7 +43,7 @@ const renderPost = (postId,connectWithUser,ratePostUp,ratePostDown) => {
   )
 }
 
-const colors = ['#7cdbd5','#f53240','#f9be02']
+const colors = ['#e37222','#07889b','#66b9bf','#eeaa7b']
 
 const renderReplies = (postId,connectWithUser,ratePostUp,ratePostDown,showPostDetail,navigate) => {
   const post = _getPost(postId)
@@ -51,7 +51,7 @@ const renderReplies = (postId,connectWithUser,ratePostUp,ratePostDown,showPostDe
   var i = 0
   return replies.map( post => {
     i++
-    if (i == 3 ) {
+    if (i == 4 ) {
       i = 0
     }
     return (
@@ -60,7 +60,7 @@ const renderReplies = (postId,connectWithUser,ratePostUp,ratePostDown,showPostDe
           key={post.get('id')}
           onPress={() => navigate({routeName: 'ThreadDetailViewContainer'})}
           >
-            <ReplyTextBox key="jo" >
+            <ReplyTextBox key="jo">
             {post}
             </ReplyTextBox>
             <PostRatingBox key="nö" style={styles.postRatingContainer}
@@ -68,7 +68,7 @@ const renderReplies = (postId,connectWithUser,ratePostUp,ratePostDown,showPostDe
             ratePostDown={() => ratePostDown()}
             connectWithUser={() => connectWithUser()}
             >
-              {post}
+            {post}
             </PostRatingBox>
         </View>
     )

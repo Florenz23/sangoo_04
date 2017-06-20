@@ -103,7 +103,7 @@ const muserPost3 = {
 const muserPost4 = {
   id : 4,
   message : post4,
-  rating : 40,
+  rating : 53,
   distance : 300,
   replies : [
     { id: 1 ,

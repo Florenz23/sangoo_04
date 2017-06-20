@@ -11,7 +11,7 @@ const createUser = () => {
     let userData_personalData_phone = createConnectData('Handy','2341234 12341234')
     let userData_personalData_image = createConnectData('Image',tina)
     let userData_hashTagData_color = createConnectData('Lieblingsstyle','Bizz')
-    let userData_hashTagData_hobby = createConnectData('Fremdsprachen','Chinesisch, Japansich, Koreanisch')
+    let userData_hashTagData_hobby = createConnectData('Fremdsprachen','Chinesisch, Japansich')
     let userData_socialData_facebook = createConnectData('Facebook','https://web.facebook.com/DonaldTrump/?_rdc=1&_rdr')
     let userData_socialData_linkedIn = createConnectData('LinkedIn','https://www.linkedin.com/in/donald-trump-jr-4454b862/?locale=de_DE')
     let userData_socialData_twitter = createConnectData('Twitter','https://twitter.com/realdonaldtrump?lang=de')
