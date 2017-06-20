@@ -11,7 +11,7 @@ import { newTanjaContact } from './db_mock_tanja_contact_add'
 // Get the default Realm with support for our objects
 let realm = new Realm({schema: [UserList, User, ConnectUserList, ConnectData, UserData]});
 
-import {donny12, hillary, zara, tanja, lena, vanessa, diana, max, tina, thomas, justin} from './db_mock_ini'
+import {donny12, hillary, zara, tanja, lena, vanessa, diana, philipp, tina, thomas, hans} from './db_mock_ini'
 
 const insertUserInDb = (user,id) => {
   const contactArray = []
@@ -53,9 +53,9 @@ const insertUserInDb = (user,id) => {
 
 const createDummyUser = () => {
   insertUserInDb(lena,'a4')
-  insertUserInDb(justin,'a10')
+  insertUserInDb(hans,'a10')
   insertUserInDb(vanessa,'a5')
-  insertUserInDb(max,'a7')
+  insertUserInDb(philipp,'a7')
   insertUserInDb(diana,'a6')
   insertUserInDb(zara,'a3')
   insertUserInDb(tina,'a8')

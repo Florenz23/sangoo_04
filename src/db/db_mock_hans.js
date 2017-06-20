@@ -7,7 +7,7 @@ const createConnectData = (description, text) => {
 
 const createUser = () => {
     let userData_personalData_name = createConnectData('Name','Müller')
-    let userData_personalData_surname = createConnectData('Vorname','Horst')
+    let userData_personalData_surname = createConnectData('Vorname','Hans')
     let userData_personalData_phone = createConnectData('Handy','2341234 12341234')
     let userData_personalData_image = createConnectData('Image',justin)
     let userData_hashTagData_color = createConnectData('Lieblingsstyle','Bizz')
@@ -50,5 +50,5 @@ const createUser = () => {
     return user
 }
 
-const justin_user = createUser()
-export default justin_user
+const hans_user = createUser()
+export default hans_user

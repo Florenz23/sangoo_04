@@ -14,6 +14,7 @@ const RATEPOSTUP = 'ThreadState/RATEPOSTUP';
 const RATEPOSTDOWN = 'ThreadState/RATEPOSTDOWN';
 const ADDNEWPOST = 'ThreadState/ADDNEWPOST';
 const SHOWPOSTDETAIL = 'ThreadState/SHOWPOSTDETAIL'
+const CONNECTWITHUSER = 'ThreadState/CONNECTWITHUSER'
 const RESET = 'CounterState/RESET';
 // Action creators
 export function increment() {
@@ -34,6 +35,9 @@ export function addNewPost() {
 export function showPostDetail() {
   return {type: SHOWPOSTDETAIL};
 }
+export function connectWithUser() {
+  return {type: CONNECTWITHUSER};
+}
 
 // Reducer
 export default function ThreadDetailStateReducer(state = initialState, action = {}) {
@@ -48,6 +52,9 @@ export default function ThreadDetailStateReducer(state = initialState, action = 
       return state
     case ADDNEWPOST:
       console.log("add")
+      return state
+    case CONNECTWITHUSER:
+      console.log("connect")
       return state
     case SHOWPOSTDETAIL:
       console.log("detail")

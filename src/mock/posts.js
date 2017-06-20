@@ -7,6 +7,7 @@ var post1= "Hat jemand verstanden, was bei dem Vortrag Gehaltsverhandlung einem 
 var post2 = "Im Vortrag Industrie 4.0 waren aber einige ganz schön alte Daten verbaut und der Text war zu klein und viel zu viel..."
 var post3 = "Vortrag: Energiewende im 21. Jh im Netz und Controlling Zeit:16.10 Uhr Raum: 201 Vortragender: Prof. Dr. Kleist, CEO von DRT"
 var post4 = "Weiß jemand, ob die Firma DRT Bohrtechnik heute da ist?"
+var post5 = "Wie wird man eigentlich diese Geschichtsstudenten los? Da stand schon wieder einer von denen 30 Minuten bei uns am Stand und hat mir ein Ohr abgekaut. Er wollte mir weiß machen, dass Helmut Kohl maßgeblich zur Industrialisierung beigetragen hat ?!"
 
 const reply_message_11 = "Nein, tut mir Leid"
 const reply_message_12 = "Dort wurde die Vernetzungszeiten vom 3-D Drucker mit dem Computergesteuerten Roboterarm aufgetragen. Dabei war der Fokus auf dem Ablaufprotokoll 4a."
@@ -24,6 +25,9 @@ const reply_message_42 = "Kommt doch auf jeden Fall bei uns #DRT Bohrtechnik vor
 const reply_message_43 = "Der leuchtende Kuli lohnt sich ☺"
 const reply_message_44 = "Also für Geologen ist leider nichts dabei..."
 const reply_message_45 = "Da haben sich unsere Marketingkollegen wieder etwas Tolles einfallen lassen. Falls ihr es noch nicht wisst, unser #DRT CEO hält um 16:10 Uhr einen Vortrag im Raum 201 zum Thema “Energiewende im 21. Jh im Netz und Controlling“. Ihr seid alle herzlich eingeladen."
+const reply_message_51 = "Mit 30 Minuten kannst du dich aber noch glücklich schätzen..."
+const reply_message_52 = "Oh... tut mir leid, sie haben aber so interessiert gewirkt..."
+const reply_message_53 = "Tja, nette Menschen kommen nicht weit."
 
 const muserPost1 = {
   id : 1,
@@ -99,24 +103,24 @@ const muserPost3 = {
 const muserPost4 = {
   id : 4,
   message : post4,
-  rating : 35,
+  rating : 40,
   distance : 300,
   replies : [
     { id: 1 ,
       message : reply_message_41,
-      rating : 11
+      rating : 30
     },
     { id: 2 ,
       message : reply_message_42,
-      rating : 8
+      rating : 21
     },
     { id: 3 ,
       message : reply_message_43,
-      rating : 20
+      rating : 15
     },
     { id: 4 ,
       message : reply_message_44,
-      rating : 17
+      rating : 5
     },
     { id: 5 ,
       message : reply_message_45,
@@ -125,8 +129,29 @@ const muserPost4 = {
   ],
   bgColor : "#7cdbd5",
 }
+const muserPost5 = {
+  id : 5,
+  message : post5,
+  rating : 35,
+  distance : 300,
+  replies : [
+    { id: 1 ,
+      message : reply_message_51,
+      rating : 11
+    },
+    { id: 2 ,
+      message : reply_message_52,
+      rating : 8
+    },
+    { id: 3 ,
+      message : reply_message_53,
+      rating : 20
+    }
+  ],
+  bgColor : "#7cdbd5",
+}
 
-posts  = [muserPost1,muserPost2,muserPost3,muserPost4]
+posts  = [muserPost4,muserPost5,muserPost2,muserPost3,muserPost1]
 const posts  = Immutable.fromJS(posts)
 
 export default posts

@@ -11,7 +11,8 @@ export default connect(
   (dispatch) => ({
       navigate: bindActionCreators(NavigationActions.navigate, dispatch),
       threadStateActions: () => dispatch(ThreadStateActions()),
-      ratePostUp: () => dispatch(ThreadStateActions.ratePostUp()),
-      ratePostDown: () => dispatch(ThreadStateActions.ratePostDown()),
+      ratePostUp: () => dispatch(ThreadDetailStateActions.ratePostUp()),
+      ratePostDown: () => dispatch(ThreadDetailStateActions.ratePostDown()),
+      connectWithUser: () => dispatch(ThreadDetailStateActions.connectWithUser()),
     })
 )(ThreadDetailView)

@@ -21,7 +21,7 @@ const _getPost = (postId) => {
   return post
 }
 
-const renderPost = (postId,ratePostUp,ratePostDown) => {
+const renderPost = (postId,connectWithUser,ratePostUp,ratePostDown) => {
   const post = _getPost(postId)
   console.log(postId)
     return (
@@ -35,6 +35,7 @@ const renderPost = (postId,ratePostUp,ratePostDown) => {
             <PostRatingBox key="nö" style={styles.postRatingContainer}
             ratePostUp={() => ratePostUp()}
             ratePostDown={() => ratePostDown()}
+            connectWithUser={() => connectWithUser()}
             >
               {post}
             </PostRatingBox>
@@ -44,7 +45,7 @@ const renderPost = (postId,ratePostUp,ratePostDown) => {
 
 const colors = ['#7cdbd5','#f53240','#f9be02']
 
-const renderReplies = (postId,ratePostUp,ratePostDown,showPostDetail,navigate) => {
+const renderReplies = (postId,connectWithUser,ratePostUp,ratePostDown,showPostDetail,navigate) => {
   const post = _getPost(postId)
   const replies = post.get('replies')
   var i = 0
@@ -65,6 +66,7 @@ const renderReplies = (postId,ratePostUp,ratePostDown,showPostDetail,navigate) =
             <PostRatingBox key="nö" style={styles.postRatingContainer}
             ratePostUp={() => ratePostUp()}
             ratePostDown={() => ratePostDown()}
+            connectWithUser={() => connectWithUser()}
             >
               {post}
             </PostRatingBox>
@@ -80,14 +82,15 @@ const ThreadDetailView = (props) => {
       addNewPost,
       showPostDetail,
       navigate,
-      postId
+      postId,
+      connectWithUser
     } = props
   console.log(props)
     return (
       <View>
           <ScrollView>
-            {renderPost(postId,ratePostUp,ratePostDown)}
-            {renderReplies(postId,ratePostUp,ratePostDown,showPostDetail,navigate)}
+            {renderPost(postId,connectWithUser,ratePostUp,ratePostDown)}
+            {renderReplies(postId,connectWithUser,ratePostUp,ratePostDown,showPostDetail,navigate)}
           </ScrollView>
           <PostAddButton
           addNewPost={() => addNewPost()}
